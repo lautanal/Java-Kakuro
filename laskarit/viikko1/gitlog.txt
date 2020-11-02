@@ -1,4 +1,4 @@
-commit a7728936357c51b29fe1a0238c92cbf1b3c76c72
+Tässä muutos logiin commit a7728936357c51b29fe1a0238c92cbf1b3c76c72
 Author: Lasse Lautanala <lasselautanala@gmail.com>
 Date:   Mon Nov 2 18:42:02 2020 +0200
 
