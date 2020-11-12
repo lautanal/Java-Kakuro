@@ -12,7 +12,7 @@ Sovelluksella on alkuvaiheessa vain yksi käyttäjä eli pelaaja.  Myöhemmin vo
 
 Sovellus koostuu yhdestä näkymästä eli pelilaudasta.
 
-Käyttö on suoraviivaista.  Käyttäjä valitsee ruudun ja antaa haluamansa numeron, joka ruutuun laitetaan.
+Käyttö on suoraviivaista.  Käyttäjä valitsee ruudun ja antaa haluamansa numeron, joka ruutuun laitetaan. Jos käyttäjän antama numero ei toteuta ruudun ehtoja, numero muuttuu punaiseksi. Kun ruudukko on täynnä, käyttäjä näkee kulutetun ajan ja saa onnittelut.
 
 <img src="kakuro.png" width="750">
 
@@ -27,4 +27,6 @@ Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seura
 - Käyttäjien rekisteröinti
 - Suorituksen nopeutta voidaan mitata ja ennätykset tallettaa käyttäjäkohtaisesti
 - Voidaan tehdä tasoja, jonka tehtävät pitää suorittaa, jotta pääsee seuraavalle tasolle
+- Käyttäjä voi merkitä ruutuun muistiin mahdolliset numerovaihtoehdot
 - Kenttien automaattinen generointi
+- Ruudukon automaattinen ratkaisu
