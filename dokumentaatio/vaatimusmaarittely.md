@@ -14,7 +14,7 @@ Sovellus koostuu yhdestä näkymästä eli pelilaudasta.
 
 Käyttö on suoraviivaista.  Käyttäjä valitsee ruudun ja antaa haluamansa numeron, joka ruutuun laitetaan.
 
-<img src="https://commons.wikimedia.org/wiki/File:Crosssum.gif" width="750">
+<img src="kakuro.png" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
 
