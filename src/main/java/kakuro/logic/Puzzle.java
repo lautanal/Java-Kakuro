@@ -16,7 +16,7 @@ public class Puzzle {
     private ArrayList<Column>[] colList;
 
     public Puzzle(int mapNr) {
-        map = new Map(mapNr); 
+        this.map = new Map(mapNr); 
         this.nRows = this.map.getnRows();
         this.nCols = this.map.getnCols();
         this.squares = new Square[this.nRows][this.nCols];
