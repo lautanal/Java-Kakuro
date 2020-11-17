@@ -14,7 +14,7 @@ Sovellus koostuu yhdestä näkymästä eli pelilaudasta.
 
 Käyttö on suoraviivaista.  Käyttäjä valitsee ruudun ja antaa haluamansa numeron, joka ruutuun laitetaan. Jos käyttäjän antama numero ei toteuta ruudun ehtoja, numero muuttuu punaiseksi. Kun ruudukko on täynnä, käyttäjä näkee kulutetun ajan ja saa onnittelut.
 
-<img src="kakuro.png" width="750">
+<img src="kakuro01.png" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
 

@@ -1,14 +1,62 @@
-# OHJELMISTOTEKNIIKKA HARJOITUSTYÖ
+# TodoApp
 
-[gitlog.txt](/laskarit/viikko1/gitlog.txt)
+Sovellus on japanilainen Kakuro-numeroristikko.  Ruudukossa on tyhjiä ruutuja, joihin täytetään numeroita vaaka- ja pystysuoraan käyttäen numeroita 1-9, siten, että samalla vaaka- tai pystyrivillä ei ole kahta samaa numeroa. Vaaka- ja pystyrivien lukujen tulee toteuttaa summa, joka on merkitty ruudukkoon.
 
-[komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
+<img src="dokumentaatio/kakuro01.png" width="750">
 
-## Alaotsikko
+## Dokumentaatio
 
-**Lorem  ipsum** *uusia muutoksia*
-dolor, sit amet consectetur adipisicing elit. Ipsa rerum ad a neque soluta eos odio dolorum vero quasi incidunt labore, placeat reprehenderit, excepturi ducimus aliquam totam sequi ullam repellat maxime illum earum! Amet fuga optio quaerat ex ut cupiditate quo et assumenda? Magni omnis, illo hic quasi voluptates natus molestias sunt est numquam tenetur, molestiae eaque ea nemo reprehenderit unde provident error fuga fugit maxime, saepe ipsa fugiat optio! Nemo voluptatibus in consequatur. Porro vel consequatur dolore! Minus accusantium praesentium, officia dicta eius debitis voluptatum quod, ea qui harum quisquam molestias? Voluptatibus architecto neque odio qui error, aut eos temporibus quos optio dolore, aliquid numquam eveniet ad sunt veniam nulla cum saepe dicta ab dolorem expedita beatae harum? Ad inventore tempora odio laudantium temporibus molestiae rerum, illo dolor voluptatem perspiciatis maiores ullam eaque nam ea fuga officia exercitationem 
+[Käyttöohje](https://github.com/lautanal/ot-harjoitustyo//blob/master/dokumentaatio/kayttoohje.md)
 
-*kursivointi* nisi itaque amet iusto nulla ducimus! Voluptates ratione laudantium, sed tempora beatae velit totam maiores. Voluptates cumque nihil, praesentium perspiciatis, ex ratione cupiditate ad qui culpa cum quia impedit officia eligendi voluptatibus quam adipisci assumenda minima veniam hic optio dicta consectetur molestiae? Aspernatur molestias, ab ipsa sunt, fuga tempore accusamus voluptates modi repellendus maxime, temporibus consequatur porro quidem corporis voluptatem. Aperiam explicabo et similique 
+[Vaatimusmäärittely](https://github.com/lautanal/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-**lihavointi** provident. Natus consequuntur excepturi atque consectetur quas sint, doloribus provident fuga commodi animi corrupti earum soluta non quasi. Rem, autem veniam eos doloribus ex atque temporibus inventore sint totam, dolorum nisi blanditiis, itaque quibusdam perferendis! Doloremque provident harum nesciunt quidem. Neque, ratione aspernatur voluptatum minima rem alias minus unde. Nihil perspiciatis sunt libero culpa. 
+[Työaikakirjanpito](https://github.com/lautanal/ot-harjoitustyo//blob/master/dokumentaatio/tuntikirjanpito.md)
+
+
+## Komentorivitoiminnot
+
+### Testaus
+
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+
+### Suoritettavan jarin generointi
+
+Komento
+
+```
+mvn package
+```
+
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _OtmTodoApp-1.0-SNAPSHOT.jar_
+
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+
+### Checkstyle
+
+Tiedostoon [checkstyle.xml](https://github.com/lautanal/ot-harjoitustyo/blob/master/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
