@@ -43,7 +43,7 @@ Sovellus piirtää ruudukon tekstimuodossa.  Ruudukon sarakkeet on merkitty nume
 
 Ruudukon oikealle puolelle on merkitty rivin numeroalueiden summat ja ruudukon alle vastaavasti sarakkeiden alueiden summat.
 
-Käyttäjä antaa ruudun numeron kaksinumeroisella luvulla, esim. 82 , joista ensimmäinen numero tarkoittaa riviä 8 ja toinen saraketta 2.  Tämän jälkeen käyttäjä antaa numeron, joka siihen ruutuun laitetaan.
+Käyttäjä määrittää ruudun kaksinumeroisella luvulla, esim. 82 , joista ensimmäinen numero tarkoittaa riviä 8 ja toinen saraketta 2.  Tämän jälkeen käyttäjä antaa numeron, joka siihen ruutuun laitetaan.
 
 	Syötä ruutu (ij, i=rivi, j=sarake, exit=x):
 	> 82
