@@ -6,5 +6,4 @@
 
 <suppressions>
     <suppress files="kakuro.ui.KakuroUi.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="kakuro.logic.Puzzle.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>
