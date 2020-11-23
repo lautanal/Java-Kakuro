@@ -34,7 +34,7 @@ public class Puzzle {
     }
     
     public void initSquares() {
-// Ruutujen olioiden initialisointi
+// Ruutujen initialisointi
         for (int i = 0; i < this.nRows; i++) {
             for (int j = 0; j < this.nCols; j++) {
                 if (this.map.getChar(i, j) != '#') {
@@ -46,7 +46,7 @@ public class Puzzle {
     }
     
     public void initRows() {
-// Rivialkioiden luonti ja rivien summien laskenta
+// Rivien alustus ja rivisummien laskenta
         for (int i = 0; i < this.nRows; i++) {
             Row r1 = null;
             for (int j = 0; j < this.nCols; j++) {
@@ -64,7 +64,7 @@ public class Puzzle {
     }
 
     public void initColumns() {
-// Sarakealkioiden luonti ja summien laskenta
+// Sarakkeiden alustus ja sarakesummien laskenta
         for (int j = 0; j < this.nCols; j++) {
             Column c1 = null;
             for (int i = 0; i < this.nRows; i++) {
@@ -130,50 +130,31 @@ public class Puzzle {
             }
             s += "\n";
         }
-        String s0 = "     ";
-        String s1 = "     ";
-        String s2 = "     ";
+        String s0 = "    ";
+        String s1 = "    ";
+        String s2 = "    ";
         for (int i = 1; i < this.nCols - 1; i++) {
-            if (this.colList[i].size() == 0) {
-                s0 += "   ";
-                s1 += "   ";
-                s2 += "   ";
-            } else if (this.colList[i].size() == 1) {
-                s0 = s0 + this.colList[i].get(0).getCorrectSum() + " ";
-                if (this.colList[i].get(0).getCorrectSum() < 10) {
-                    s0 += " ";
-                }
-                s1 += "   ";
-                s2 += "   ";
-            } else if (this.colList[i].size() == 2) {
-                s0 = s0 + this.colList[i].get(0).getCorrectSum() + " ";
-                if (this.colList[i].get(0).getCorrectSum() < 10) {
-                    s0 += " ";
-                }
-                s1 = s1 + this.colList[i].get(1).getCorrectSum() + " ";
-                if (this.colList[i].get(1).getCorrectSum() < 10) {
-                    s1 += " ";
-                }
-                s2 += "   ";
-            } else {
-                s0 = s0 + this.colList[i].get(0).getCorrectSum() + " ";
-                if (this.colList[i].get(0).getCorrectSum() < 10) {
-                    s0 += " ";
-                }
-                s1 = s1 + this.colList[i].get(1).getCorrectSum() + " ";
-                if (this.colList[i].get(1).getCorrectSum() < 10) {
-                    s1 += " ";
-                }
-                s2 = s2 + this.colList[i].get(2).getCorrectSum() + " ";
-                if (this.colList[i].get(2).getCorrectSum() < 10) {
-                    s2 += " ";
-                }
-            }
+            String[] cSums = colSums(i);
+            s0 = s0 + cSums[0];
+            s1 = s1 + cSums[1];
+            s2 = s2 + cSums[2];
         }
         s = s + s0 + "\n" + s1 + "\n" + s2 + "\n";
         
         return s;
-
     }
     
+    public String[] colSums(int iCol) {
+// Sarakkeen summat (tulostus tekstimuodossa)
+        String[] cSums = new String[] {"   ", "   ", "   "};
+        for (int j = 0; j < this.colList[iCol].size(); j++) {
+            int sj = this.colList[iCol].get(j).getCorrectSum();
+            if (sj < 10) {
+                cSums[j] = " " + sj + " ";
+            } else {
+                cSums[j] = " " + sj;
+            }
+        }
+        return cSums;
+    }
 }
