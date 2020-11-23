@@ -11,7 +11,7 @@ Pakkaus _todoapp.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän _todo
 
 ## Käyttöliittymä
 
-Käyttöliittymä on rakennettu ohjelmallisesti luokassa [kakuro.ui.KakuroUi] .  Käyttöliittymä on toistaiseksi tekstikäyttöliittymä, mutta toteutetaan jatkossa JavaFX-kirjaston avulla graafisena käyttöliittymänä.
+Käyttöliittymä on rakennettu ohjelmallisesti luokassa _kakuro.ui.KakuroUi_ .  Käyttöliittymä on toistaiseksi tekstikäyttöliittymä, mutta toteutetaan jatkossa JavaFX-kirjaston avulla graafisena käyttöliittymänä.
 
 Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, se ainoastaan kutsuu sovelluslogiikan toteuttavan _Puzzle_-luokan olion _puzzle_ metodeja.
 
