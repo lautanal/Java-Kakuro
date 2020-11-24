@@ -8,4 +8,5 @@
 | 17.11. | 5    | toiminnan parantelua, testausta|
 | 22.11. | 2    | Jacoco, Checkstyle|
 | 23.11. | 4    | Arkkitehtuuri, dokumentaatio|
-| yht    | 21   | 
+| 24.11. | 5    | Testien lisäystä, pelikenttien luku tiedostoista|
+| yht    | 26   | 
