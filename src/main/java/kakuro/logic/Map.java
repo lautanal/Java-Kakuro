@@ -15,7 +15,7 @@ public class Map {
 
     public Map(int mapNr) {
         String fname = "puzzle/puzzle" + mapNr + ".txt";
-        this.map = puzzleRead(fname,10,9);
+        this.map = puzzleRead(fname, 10, 9);
         this.nRows = this.map.length;
         this.nCols = this.map[0].length;
     }
