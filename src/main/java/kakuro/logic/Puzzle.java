@@ -81,6 +81,10 @@ public class Puzzle {
         }
     }
 
+    public Square getSquare(int i, int j) {
+        return this.squares[i][j];
+    }
+    
     public int setSquare(int i, int j, int number) {
 // Numeron laittaminen ruutuun
         this.map.setChar(i, j, (char) (number + 48));
@@ -93,6 +97,10 @@ public class Puzzle {
             return false;
         }
         return true;
+    }
+
+    public Map getMap() {
+        return this.map;
     }
     
     public boolean checkCompleted() {

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package kakuro.logic;
 
 import org.junit.After;
@@ -18,8 +13,8 @@ import static org.junit.Assert.*;
  */
 public class RowTest {
 
-    Square sq1, sq2, sq3, sq4;
-    Row r1;
+    Square sq1, sq2, sq3, sq4, sq5;
+    Row r1, r2;
     Column c1, c2;
     
     @Before
@@ -28,6 +23,7 @@ public class RowTest {
         sq2 = new Square(9);
         sq3 = new Square(6);
         sq4 = new Square(5);
+        sq5 = new Square(7);
         r1 = new Row();
         r1.addSquare(sq1);
         r1.addSquare(sq2);
@@ -37,6 +33,9 @@ public class RowTest {
         c2 = new Column();
         c2.addSquare(sq2);
         c2.addSquare(sq4);
+        r2 = new Row();
+        r2.addSquare(sq3);
+        r2.addSquare(sq5);
     }
 
     @Test
@@ -48,8 +47,12 @@ public class RowTest {
     
     @Test
     public void ruudunOikeaTulos() {
+        sq1.setNumber(8);
+        sq2.setNumber(8);
         assertEquals(8, sq1.getCorrect());
         assertEquals(9, sq2.getCorrect());
+        assertEquals(true, sq1.checkCorrect());
+        assertEquals(false, sq2.checkCorrect());
     }
     
     @Test
@@ -78,6 +81,48 @@ public class RowTest {
         assertEquals(false, r1.checkSum());
         sq2.setNumber(9);
         assertEquals(true, r1.checkSum());
+        sq3.setNumber(3);
+        assertEquals(false, c1.checkSum());
+        sq3.setNumber(6);
+        assertEquals(true, c1.checkSum());
     }
     
+    
+    @Test
+    public void pelikentanTarkistus() {
+        Puzzle pz1 = new Puzzle(1);
+        assertEquals(false, pz1.checkSquare(2,1));
+        assertEquals(true, pz1.checkSquare(3,1));
+        assertEquals(0, pz1.setSquare(1,3,9));
+        assertEquals(0, pz1.setSquare(1,4,5));
+        assertEquals(0, pz1.setSquare(2,2,4));
+        assertEquals(0, pz1.setSquare(2,3,3));
+        assertEquals(0, pz1.setSquare(2,4,2));
+        assertEquals(0, pz1.setSquare(3,1,9));
+        assertEquals(0, pz1.setSquare(3,2,3));
+        assertEquals(0, pz1.setSquare(3,5,3));
+        assertEquals(0, pz1.setSquare(3,6,8));
+        assertEquals(0, pz1.setSquare(4,1,7));
+        assertEquals(0, pz1.setSquare(4,2,6));
+        assertEquals(0, pz1.setSquare(4,4,3));
+        assertEquals(0, pz1.setSquare(4,5,1));
+        assertEquals(0, pz1.setSquare(4,6,7));
+        assertEquals(0, pz1.setSquare(5,2,1));
+        assertEquals(0, pz1.setSquare(5,3,3));
+        assertEquals(0, pz1.setSquare(5,4,4));
+        assertEquals(0, pz1.setSquare(5,6,2));
+        assertEquals(0, pz1.setSquare(5,7,6));
+        assertEquals(0, pz1.setSquare(6,2,7));
+        assertEquals(0, pz1.setSquare(6,3,5));
+        assertEquals(0, pz1.setSquare(6,6,3));
+        assertEquals(0, pz1.setSquare(6,7,9));
+        assertEquals(0, pz1.setSquare(7,4,5));
+        assertEquals(0, pz1.setSquare(7,5,8));
+        assertEquals(0, pz1.setSquare(7,6,1));
+        assertEquals(0, pz1.setSquare(8,4,7));
+        assertEquals(0, pz1.setSquare(8,5,9));
+        assertEquals(true, pz1.checkCompleted());
+        assertEquals('9', pz1.getMap().getChar(1,3));
+        assertEquals('5', pz1.getMap().getChar(1,4));
+    }
 }
