@@ -10,7 +10,7 @@ Ohjelma käynnistetään komennolla
 java -jar kakuro.jar
 ```
 
-## Tekstikäyttöliittymä
+## Käyttöliittymä
 
 Sovellusta käytetään JavaFX:llä luodun käyttöliittymän avulla:
 
