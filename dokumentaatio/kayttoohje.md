@@ -22,10 +22,10 @@ Sovellusikkunan alaosassa on ruudukko ja yläosassa on numeroiden valinta ja inf
 
 Käyttäjä merkitsee jonkin ruudun hiirellä näpäyttämällä ja valitsee sen jälkeen kyseiseen ruutuun tulevan luvun.  Jos ruuruun valittu luku ei toteuta ruudun ehtoja (väärä summa tai sama luku kahdesti), saa käyttäjä ilmoituksen virheestä.
 
-<img src="KakuroUiError" width="750">
+<img src="KakuroUiError.png" width="750">
 
 Kun käyttäjä saa ruudukon täytettyä oikein, hän saa sovellukselta onnittelut.
 
-<img src="KakuroUiCompleted" width="750">
+<img src="KakuroUiCompleted.png" width="750">
 
 Sovelluksessa on tällä hetkellä 10 pientä ruudukkoa, joista valitaan satunnaisesti joku pelattavaksi.
