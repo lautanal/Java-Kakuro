@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [kakuro.jar](https://github.com/lautanal/ot-harjoitustyo/releases/tag/viikko3)
+Lataa tiedosto [kakuro.jar](https://github.com/lautanal/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Ohjelman käynnistäminen
 
