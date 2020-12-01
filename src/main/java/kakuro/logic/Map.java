@@ -21,21 +21,20 @@ public class Map {
     }
 
     public int getnRows() {
-        return nRows;
+        return this.nRows;
     }
 
     public int getnCols() {
-        return nCols;
+        return this.nCols;
     }
 
     public char getChar(int i, int j) {
-        return map[i][j];
+        return this.map[i][j];
     }
 
     public void setChar(int i, int j, char c) {
-        map[i][j] = c;
+        this.map[i][j] = c;
     }
-
 
     public char[][] puzzleRead(String fname, int n, int m) {
         char[][] t = new char[n][m];

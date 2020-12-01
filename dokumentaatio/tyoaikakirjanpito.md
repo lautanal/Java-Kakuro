@@ -9,4 +9,6 @@
 | 22.11. | 2    | Jacoco, Checkstyle|
 | 23.11. | 4    | Arkkitehtuuri, dokumentaatio|
 | 24.11. | 5    | Testien lisäystä, pelikenttien luku tiedostoista|
-| yht    | 26   | 
+| 30.11. | 3   | Käyttöliittymän tekoa|
+| 01.12. | 4    | Käyttöliittymän tekoa|
+| yht    | 33   | 

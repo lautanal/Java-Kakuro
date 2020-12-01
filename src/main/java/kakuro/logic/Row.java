@@ -36,18 +36,13 @@ public class Row {
         square.setRow(this);
     }
 
-// Oikean rivisumma
-    public int getCorrectSum() {
-        return this.correctSum;
-    }
-
 // Uuden numeron talletus rivisummaan (uusi numero)  
     public int addNumber(int number) {
         this.numbers[number] += 1;
         this.count += 1;
         this.sum += number;
         int res = 0;
-        if (this.numbers[number] > 1) {
+        if (!this.checkSame()) {
             res = 1;
         }
         if (!this.checkSum()) {
@@ -62,13 +57,33 @@ public class Row {
         this.numbers[newNumber] += 1;
         this.sum = this.sum - oldNumber + newNumber;
         int res = 0;
-        if (this.numbers[newNumber] > 1) {
+        if (!this.checkSame()) {
             res = 1;
         }
         if (!this.checkSum()) {
             res += 4;
         }
         return res;
+    }
+
+// Ruudun numeron nollaus    
+    public int zeroNumber(int oldNumber) {
+        this.numbers[oldNumber] -= 1;
+        this.count -= 1;
+        this.sum = this.sum - oldNumber;
+        int res = 0;
+        if (!this.checkSame()) {
+            res = 1;
+        }
+        if (!this.checkSum()) {
+            res += 4;
+        }
+        return res;
+    }
+    
+// Oikea rivisumma
+    public int getCorrectSum() {
+        return this.correctSum;
     }
 
 // Rivisumman tarkistus
@@ -78,6 +93,16 @@ public class Row {
         }
         if (this.count < this.nSquares && this.sum >= this.correctSum) {
             return false;
+        }
+        return true;
+    }
+
+// Saman numeron tarkistus    
+    public boolean checkSame() {
+        for (int i=1; i <= 9; i++) {
+            if (this.numbers[i] > 1) {
+                return false;
+            }
         }
         return true;
     }

@@ -42,8 +42,8 @@ public class Column {
         this.count += 1;
         this.sum += number;
         int res = 0;
-        if (this.numbers[number] > 1) {
-            res = 1;
+        if (!this.checkSame()) {
+            res = 2;
         }
         if (!this.checkSum()) {
             res += 8;
@@ -57,8 +57,23 @@ public class Column {
         this.numbers[newNumber] += 1;
         this.sum = this.sum - oldNumber + newNumber;
         int res = 0;
-        if (this.numbers[newNumber] > 1) {
-            res = 1;
+        if (!this.checkSame()) {
+            res = 2;
+        }
+        if (!this.checkSum()) {
+            res += 8;
+        }
+        return res;
+    }
+
+// Ruudun numeron nollaus    
+    public int zeroNumber(int oldNumber) {
+        this.numbers[oldNumber] -= 1;
+        this.count -= 1;
+        this.sum = this.sum - oldNumber;
+        int res = 0;
+        if (!this.checkSame()) {
+            res = 2;
         }
         if (!this.checkSum()) {
             res += 8;
@@ -78,6 +93,16 @@ public class Column {
         }
         if (this.count < this.nSquares && this.sum >= this.correctSum) {
             return false;
+        }
+        return true;
+    }
+
+// Saman numeron tarkistus    
+    public boolean checkSame() {
+        for (int i=1; i <= 9; i++) {
+            if (this.numbers[i] > 1) {
+                return false;
+            }
         }
         return true;
     }
