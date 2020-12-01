@@ -99,7 +99,7 @@ public class Row {
 
 // Saman numeron tarkistus    
     public boolean checkSame() {
-        for (int i=1; i <= 9; i++) {
+        for (int i = 1; i <= 9; i++) {
             if (this.numbers[i] > 1) {
                 return false;
             }
