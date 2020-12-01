@@ -14,7 +14,7 @@ java -jar kakuro.jar
 
 Sovellusta käytetään JavaFX:llä luodun käyttöliittymän avulla:
 
-<img src="dokumentaatio/kakuroUi.png" width="750">
+<img src="kakuroUi.png" width="750">
 
 Kakuro-ruudukossa on tyhjiä ruutuja, joihin täytetään numeroita vaaka- ja pystysuoraan käyttäen numeroita 1-9.  Samassa kentässä vaaka- tai pystyrivillä ei ole kahta samaa numeroa. Vaaka- ja pystyrivien lukujen tulee toteuttaa summa, joka on merkitty ruudukkoon.
 
