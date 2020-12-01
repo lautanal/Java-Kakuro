@@ -122,7 +122,5 @@ public class RowTest {
         assertEquals(0, pz1.setSquare(8,4,7));
         assertEquals(0, pz1.setSquare(8,5,9));
         assertEquals(true, pz1.checkCompleted());
-        assertEquals('9', pz1.getMap().getChar(1,3));
-        assertEquals('5', pz1.getMap().getChar(1,4));
     }
 }
