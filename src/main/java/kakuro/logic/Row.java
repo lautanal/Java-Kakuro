@@ -3,40 +3,35 @@ package kakuro.logic;
 import java.util.ArrayList;
 
 public class Row {
+    private int yRow;
+    private int xStart;
     private int nSquares;
     private int correctSum;
     private int[] numbers;
     private int count;
     private int sum;
-    private ArrayList<Square> squareList;
+//    private ArrayList<Square> squareList;
 
-    public Row() {
+    public Row(int yRow, int xStart) {
+        this.yRow = yRow;
+        this.xStart = xStart;
         this.nSquares = 0;
         this.correctSum = 0;
         this.numbers = new int[10];
         this.count = 0;
         this.sum = 0;
-        this.squareList = new ArrayList<>();
-    }
-
-    public Row(int nSquares, int correctSum) {
-        this.nSquares = nSquares;
-        this.correctSum = correctSum;
-        this.numbers = new int[10];
-        this.count = 0;
-        this.sum = 0;
-        this.squareList = new ArrayList<>();
+//        this.squareList = new ArrayList<>();
     }
 
 // Ruudun lisäys riviin
     public void addSquare(Square square) {
         this.nSquares += 1;
         this.correctSum += square.getCorrect();
-        squareList.add(square);
+//        squareList.add(square);
         square.setRow(this);
     }
 
-// Uuden numeron talletus rivisummaan (uusi numero)  
+// Uuden numeron talletus riviin (uusi numero)  
     public int addNumber(int number) {
         this.numbers[number] += 1;
         this.count += 1;
@@ -79,6 +74,16 @@ public class Row {
             res += 4;
         }
         return res;
+    }
+    
+// Rivin alku x
+    public int getStart() {
+        return this.xStart;
+    }
+    
+// Rivin ruutujen lukumäärä
+    public int getSquares() {
+        return this.nSquares;
     }
     
 // Oikea rivisumma

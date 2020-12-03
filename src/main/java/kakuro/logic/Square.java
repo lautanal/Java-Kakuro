@@ -12,22 +12,22 @@ public class Square {
     }
 
     public Row getRow() {
-// Ruudun rivialkion hakeminen
+// Ruudun rivin hakeminen
         return this.row;
     }
 
     public void setRow(Row row) {
-// Ruudun rivialkion merkitseminen
+// Ruudun rivin merkitseminen
         this.row = row;
     }
 
     public Column getColumn() {
-// Ruudun sarakealkion hakeminen
+// Ruudun sarakkeen hakeminen
         return this.column;
     }
 
     public void setColumn(Column column) {
-// Ruudun sarakealkion merkitseminen
+// Ruudun sarakkeen merkitseminen
         this.column = column;
     }
 
@@ -46,7 +46,7 @@ public class Square {
     }
 
     public int zeroNumber() {
-// Ruudun numeron asettaminen
+// Ruudun numeron nollaus
         if (this.number == 0) {
             return 0;
         } else {

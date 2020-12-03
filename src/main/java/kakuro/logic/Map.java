@@ -36,6 +36,7 @@ public class Map {
         this.map[i][j] = c;
     }
 
+// Kakuro-ristikon luku tiedostosta
     public char[][] puzzleRead(String fname, int n, int m) {
         char[][] t = new char[n][m];
         try {

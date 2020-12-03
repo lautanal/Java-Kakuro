@@ -3,40 +3,36 @@ package kakuro.logic;
 import java.util.ArrayList;
 
 public class Column {
+    private int xColumn;
+    private int yStart;
     private int nSquares;
     private int correctSum;
     private int[] numbers;
     private int count;
     private int sum;
-    private ArrayList<Square> squareList;
+//    private ArrayList<Square> squareList;
 
-    public Column() {
+// Konstruktorit
+    public Column(int xColumn, int yStart) {
+        this.xColumn = xColumn;
+        this.yStart = yStart;
         this.nSquares = 0;
         this.correctSum = 0;
         this.numbers = new int[10];
         this.count = 0;
         this.sum = 0;
-        this.squareList = new ArrayList<>();
-    }
-
-    public Column(int nSquares, int correctSum) {
-        this.nSquares = nSquares;
-        this.correctSum = correctSum;
-        this.numbers = new int[10];
-        this.count = 0;
-        this.sum = 0;
-        this.squareList = new ArrayList<>();
+//        this.squareList = new ArrayList<>();
     }
 
 // Ruudun lisäys sarakkeeseen
     public void addSquare(Square square) {
         this.nSquares += 1;
         this.correctSum += square.getCorrect();
-        squareList.add(square);
+//        squareList.add(square);
         square.setColumn(this);
     }
 
-//  Uuden numeron lisäys sarakesummaan   
+//  Uuden numeron lisäys ruutuun   
     public int addNumber(int number) {
         this.numbers[number] += 1;
         this.count += 1;
@@ -51,7 +47,7 @@ public class Column {
         return res;
     }
 
-// Numeron muuttaminen    
+// Ruudun numeron muuttaminen    
     public int changeNumber(int oldNumber, int newNumber) {
         this.numbers[oldNumber] -= 1;
         this.numbers[newNumber] += 1;
@@ -79,6 +75,16 @@ public class Column {
             res += 8;
         }
         return res;
+    }
+    
+// Rivin alku y
+    public int getStart() {
+        return this.yStart;
+    }
+    
+// Rivin ruutujen lukumäärä
+    public int getSquares() {
+        return this.nSquares;
     }
 
 // Oikea sarakesumma    
