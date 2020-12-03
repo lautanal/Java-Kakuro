@@ -9,6 +9,7 @@ Ohjelma käynnistetään komennolla
 ```
 java -jar kakuro.jar
 ```
+Pelikentät sijaitsevat puzzle-kansiossa, joka täytyy ladata kakuro.jar -tiedoston lisäksi.
 
 ## Käyttöliittymä
 
@@ -20,7 +21,7 @@ Kakuro-ruudukossa on tyhjiä ruutuja, joihin täytetään numeroita vaaka- ja py
 
 Sovellusikkunan alaosassa on ruudukko ja yläosassa on numeroiden valinta ja info-tekstin rivi.
 
-Käyttäjä merkitsee jonkin ruudun hiirellä näpäyttämällä ja valitsee sen jälkeen kyseiseen ruutuun tulevan luvun.  Jos ruuruun valittu luku ei toteuta ruudun ehtoja (väärä summa tai sama luku kahdesti), saa käyttäjä ilmoituksen virheestä.
+Käyttäjä merkitsee jonkin ruudun hiirellä näpäyttämällä ja valitsee sen jälkeen kyseiseen ruutuun tulevan luvun yläreunan numerorivistä.  Jos ruuruun valittu luku ei toteuta ruudun ehtoja (väärä summa tai sama luku kahdesti), saa käyttäjä ilmoituksen virheestä.  Virheelliset numerot muuttuvat punaisiksi.
 
 <img src="KakuroUiError.png" width="750">
 
