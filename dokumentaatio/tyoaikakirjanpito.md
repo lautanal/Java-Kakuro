@@ -11,4 +11,5 @@
 | 24.11. | 5    | Testien lisäystä, pelikenttien luku tiedostoista|
 | 30.11. | 3   | Käyttöliittymän tekoa|
 | 01.12. | 8    | Käyttöliittymän tekoa|
-| yht    | 37   | 
+| 01.12. | 3    | Käyttöliittymän parantelua, värien lisääminen|
+| yht    | 40   | 
