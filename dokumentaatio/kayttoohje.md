@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [kakuro.jar](https://github.com/lautanal/ot-harjoitustyo/releases/tag/Viikko5)
+Lataa tiedosto [kakuro.jar](https://github.com/lautanal/ot-harjoitustyo/releases/tag/Viikko5) sekä puzzle-kansio, jossa on pelikentät.
 
 ## Ohjelman käynnistäminen
 
@@ -9,7 +9,6 @@ Ohjelma käynnistetään komennolla
 ```
 java -jar kakuro.jar
 ```
-Pelikentät sijaitsevat puzzle-kansiossa, joka täytyy ladata kakuro.jar -tiedoston lisäksi.
 
 ## Käyttöliittymä
 
