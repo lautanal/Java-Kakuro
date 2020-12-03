@@ -48,7 +48,8 @@ public class Puzzle {
                 if (this.squares[i][j] != null) {
                     if (r1 == null) {
                         rowStart = j - 1;
-                        r1 = new Row(i,j);
+                        r1 = new Row();
+                        r1.setRowStart(i,j);
                     }
                     r1.addSquare(squares[i][j]);
                 } else if (r1 != null) {
@@ -68,7 +69,8 @@ public class Puzzle {
                 if (this.squares[i][j] != null) {
                     if (c1 == null) {
                         colStart = i - 1;
-                        c1 = new Column(j,i);
+                        c1 = new Column();
+                        c1.setColumnStart(j,i);
                     }
                     c1.addSquare(squares[i][j]);
                 } else if (c1 != null) {

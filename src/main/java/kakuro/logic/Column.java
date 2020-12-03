@@ -13,15 +13,18 @@ public class Column {
 //    private ArrayList<Square> squareList;
 
 // Konstruktorit
-    public Column(int xColumn, int yStart) {
-        this.xColumn = xColumn;
-        this.yStart = yStart;
+    public Column() {
         this.nSquares = 0;
         this.correctSum = 0;
         this.numbers = new int[10];
         this.count = 0;
         this.sum = 0;
 //        this.squareList = new ArrayList<>();
+    }
+    
+    public void setColumnStart(int xColumn, int yStart) {
+        this.xColumn = xColumn;
+        this.yStart = yStart;
     }
 
 // Ruudun lisäys sarakkeeseen

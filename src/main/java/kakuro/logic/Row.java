@@ -12,9 +12,7 @@ public class Row {
     private int sum;
 //    private ArrayList<Square> squareList;
 
-    public Row(int yRow, int xStart) {
-        this.yRow = yRow;
-        this.xStart = xStart;
+    public Row() {
         this.nSquares = 0;
         this.correctSum = 0;
         this.numbers = new int[10];
@@ -23,6 +21,12 @@ public class Row {
 //        this.squareList = new ArrayList<>();
     }
 
+// Rivin aloitus    
+    public void setRowStart(int yRow, int xStart) {
+        this.yRow = yRow;
+        this.xStart = xStart;
+    }
+    
 // Ruudun lisäys riviin
     public void addSquare(Square square) {
         this.nSquares += 1;
