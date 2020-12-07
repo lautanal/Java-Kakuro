@@ -14,6 +14,10 @@ import javafx.scene.shape.Line;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.input.KeyCode;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.util.Random;
 
 import kakuro.logic.Puzzle;
@@ -32,8 +36,11 @@ public class GameUi {
     private Label infoText;
     private GridPane numberGrid;
     private GridPane kakuroGrid;
+    private Stage window;
+    private Scene scene;
 
-    public GameUi() {
+    public GameUi(Stage gameWindow) {
+        this.window = gameWindow;
         Random rn = new Random();
         this.gamenr = rn.nextInt(9) + 2;
         this.puzzle = new Puzzle(this.gamenr);
@@ -50,18 +57,21 @@ public class GameUi {
         this.kakuroGrid = new GridPane();
     }
     
-    public Parent getScene() {
+    public Scene getScene() {
 
 // Laudan koko        
         this.gameLayout.setPrefSize(300, 300);
         
 // Info text        
-        infoText.setFont(Font.font("Helvetica", 40));
+        infoText.setFont(Font.font("Helvetica", 30));
         infoText.setAlignment(Pos.TOP_CENTER);
         infoText.setPadding(new Insets(10, 10, 10, 10));
 
 // Numerovalinta-gridi        
         createNumberGrid();
+        
+// Uusi peli -nappi
+        newGameButton();
         
 // Kakuro-gridi
         createKakuroGrid();
@@ -70,9 +80,35 @@ public class GameUi {
         gameLayout.setTop(infoText);
         gameLayout.setCenter(numberGrid);
         gameLayout.setBottom(kakuroGrid);
-        return gameLayout;
+        
+        this.scene = new Scene(gameLayout);
+        this.scene.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.DIGIT0) {
+                setNumber(0);
+            } else if (event.getCode() == KeyCode.DIGIT1) {
+                setNumber(1);
+            } else if (event.getCode() == KeyCode.DIGIT2) {
+                setNumber(2);
+            } else if (event.getCode() == KeyCode.DIGIT3) {
+                setNumber(3);
+            } else if (event.getCode() == KeyCode.DIGIT4) {
+                setNumber(4);
+            } else if (event.getCode() == KeyCode.DIGIT5) {
+                setNumber(5);
+            } else if (event.getCode() == KeyCode.DIGIT6) {
+                setNumber(6);
+            } else if (event.getCode() == KeyCode.DIGIT7) {
+                setNumber(7);
+            } else if (event.getCode() == KeyCode.DIGIT8) {
+                setNumber(8);
+            } else if (event.getCode() == KeyCode.DIGIT9) {
+                setNumber(9);
+            }
+        });       
+        return this.scene;
     }
 
+   
 // Numerovalinta-gridi        
     private void createNumberGrid() {
         this.numberGrid.setAlignment(Pos.TOP_LEFT);
@@ -90,33 +126,66 @@ public class GameUi {
             this.numberGrid.add(numbers[x], x, 1);
             int rx = x;
             this.numbers[x].setOnAction((event) -> {
-                int res = 0;
-                if (rx == 0) {
-                    this.buttons[this.yfocus][this.xfocus].setText("  ");
-                    res = puzzle.zeroSquare(this.yfocus,this.xfocus);
-                } else {
-                    this.buttons[this.yfocus][this.xfocus].setText(Integer.toString(rx));
-                    res = puzzle.setSquare(this.yfocus,this.xfocus, rx);
-                }
-                if (res > 0) {
-                    errorNumbers(res, this.yfocus, this.xfocus);
-                    errorMessage(res);
-                } else {
-                    okNumbers(this.yfocus, this.xfocus);
-                    String tx1 = "";
-                    if (puzzle.checkCompleted()) {
-                       tx1 = "ONNITTELUT";
-                       this.completed = true;
-                    }
-                    this.infoText.setText(tx1);
-               }
+                setNumber(rx);
             });
         }
     }
+
+    public void setNumber(int rx) {
+        int res = 0;
+        if (rx == 0) {
+            this.buttons[this.yfocus][this.xfocus].setText("  ");
+            res = puzzle.zeroSquare(this.yfocus,this.xfocus);
+        } else {
+            this.buttons[this.yfocus][this.xfocus].setText(Integer.toString(rx));
+            res = puzzle.setSquare(this.yfocus,this.xfocus, rx);
+        }
+        if (res > 0) {
+            errorNumbers(res, this.yfocus, this.xfocus);
+            errorMessage(res);
+        } else {
+            okNumbers(this.yfocus, this.xfocus);
+            String tx = "";
+            if (puzzle.checkCompleted()) {
+               tx = "Onnittelut, ratkaisit tehtävän";
+               this.completed = true;
+            }
+            this.infoText.setText(tx);
+       }
+    }
+
     
-    
-// Kakuro-grid
-   private void createKakuroGrid() {
+//  Uusi peli    
+    private void newGameButton() {
+        Button newGame = new Button("Uusi peli");
+        this.numberGrid.add(newGame, 12, 1);
+        newGame.setOnAction((event) -> {
+            this.newGame();
+            this.getScene();
+            window.setScene(this.scene);
+        });
+    }
+
+// Uuden pelin alkuasetukset    
+     public void newGame() {
+        Random rn = new Random();
+        this.gamenr = rn.nextInt(9) + 2;
+        this.puzzle = new Puzzle(this.gamenr);
+        this.nRows = this.puzzle.getnRows();
+        this.nCols = this.puzzle.getnCols();
+        this.buttons = new Button[this.nRows][this.nCols];
+        this.numbers = new Button[10];
+        this.completed = false;
+        this.xfocus = 0;
+        this.yfocus = 0;
+        this.gameLayout = new BorderPane();
+        this.infoText = new Label("");
+        this.numberGrid = new GridPane();
+        this.kakuroGrid = new GridPane();
+    }
+   
+// Kakuro-gridin piirtäminen
+    private void createKakuroGrid() {
         this.kakuroGrid.setAlignment(Pos.CENTER);
         this.kakuroGrid.setVgap(1);
         this.kakuroGrid.setHgap(1);
@@ -187,13 +256,13 @@ public class GameUi {
         int errRow = res / 4;
         res = res  % 4;
         if (res > 0 || errRow > 0 || errCol > 0) {
-            tx1 = "VIRHE: ";
+            tx1 = "Virhe";
         }
         if (res > 0) {
-            tx1 = tx1 + "kaksi samaa ";
+            tx1 = tx1 + ", kaksi samaa";
         }
         if (errRow > 0 || errCol > 0) {
-            tx1 = tx1 + ", summa ei täsmää ";
+            tx1 = tx1 + ", summa ei täsmää";
         }
         this.infoText.setText(tx1);
     }
