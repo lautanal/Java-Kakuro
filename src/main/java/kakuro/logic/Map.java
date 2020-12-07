@@ -3,10 +3,6 @@ package kakuro.logic;
 import java.io.File;
 import java.util.Scanner;
 
-/**
- *
- * @author lasselautanala
- */
 public class Map {
 
     private char[][] map;

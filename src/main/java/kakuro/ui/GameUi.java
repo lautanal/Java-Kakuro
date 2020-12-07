@@ -1,10 +1,5 @@
 package kakuro.ui;
 
-/**
- *
- * @author lasselautanala
- */
-
 import javafx.event.EventType;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -23,11 +18,6 @@ import java.util.Random;
 
 import kakuro.logic.Puzzle;
 
-/**
- *
- * @author Lasse
- */
-
 public class GameUi {
     private int gamenr;
     private Puzzle puzzle;
@@ -38,6 +28,10 @@ public class GameUi {
     private int xfocus;
     private int yfocus;
     private boolean completed;
+    private BorderPane gameLayout;
+    private Label infoText;
+    private GridPane numberGrid;
+    private GridPane kakuroGrid;
 
     public GameUi() {
         Random rn = new Random();
@@ -50,25 +44,41 @@ public class GameUi {
         this.completed = false;
         this.xfocus = 0;
         this.yfocus = 0;
+        this.gameLayout = new BorderPane();
+        this.infoText = new Label("");
+        this.numberGrid = new GridPane();
+        this.kakuroGrid = new GridPane();
     }
     
     public Parent getScene() {
 
-        BorderPane gameLayout = new BorderPane();
-        gameLayout.setPrefSize(300, 300);
-
+// Laudan koko        
+        this.gameLayout.setPrefSize(300, 300);
+        
 // Info text        
-        Label infoText = new Label("");
         infoText.setFont(Font.font("Helvetica", 40));
         infoText.setAlignment(Pos.TOP_CENTER);
         infoText.setPadding(new Insets(10, 10, 10, 10));
 
-// Numerogridi        
-        GridPane numberGrid = new GridPane();
-        numberGrid.setAlignment(Pos.TOP_LEFT);
-        numberGrid.setVgap(5);
-        numberGrid.setHgap(5);
-        numberGrid.setPadding(new Insets(10, 10, 10, 10));
+// Numerovalinta-gridi        
+        createNumberGrid();
+        
+// Kakuro-gridi
+        createKakuroGrid();
+
+// Layout
+        gameLayout.setTop(infoText);
+        gameLayout.setCenter(numberGrid);
+        gameLayout.setBottom(kakuroGrid);
+        return gameLayout;
+    }
+
+// Numerovalinta-gridi        
+    private void createNumberGrid() {
+        this.numberGrid.setAlignment(Pos.TOP_LEFT);
+        this.numberGrid.setVgap(5);
+        this.numberGrid.setHgap(5);
+        this.numberGrid.setPadding(new Insets(10, 10, 10, 10));
         for (int x = 0; x < 10; x++) {
             this.numbers[x] = new Button(" ");
             this.numbers[x].setFont(Font.font("Helvetica", 25));
@@ -77,7 +87,7 @@ public class GameUi {
             } else {
                 this.numbers[x].setText(Integer.toString(x));
             }
-            numberGrid.add(numbers[x], x, 1);
+            this.numberGrid.add(numbers[x], x, 1);
             int rx = x;
             this.numbers[x].setOnAction((event) -> {
                 int res = 0;
@@ -90,43 +100,35 @@ public class GameUi {
                 }
                 if (res > 0) {
                     errorNumbers(res, this.yfocus, this.xfocus);
-                    errorMessage(res, infoText);
+                    errorMessage(res);
                 } else {
                     okNumbers(this.yfocus, this.xfocus);
                     String tx1 = "";
                     if (puzzle.checkCompleted()) {
-                       tx1 = "ONNITTELUT, RATKAISIT TEHTÄVÄN";
+                       tx1 = "ONNITTELUT";
                        this.completed = true;
                     }
-                    infoText.setText(tx1);
+                    this.infoText.setText(tx1);
                }
             });
         }
-        
-// Kakuro-ristikko
-        GridPane kakuroGrid = createKakuroGrid();
-
-        gameLayout.setTop(infoText);
-        gameLayout.setCenter(numberGrid);
-        gameLayout.setBottom(kakuroGrid);
-        return gameLayout;
     }
-
-// Kakuro-ristikko
-   private GridPane createKakuroGrid() {
-        GridPane kakuroGrid = new GridPane();
-        kakuroGrid.setAlignment(Pos.CENTER);
-        kakuroGrid.setVgap(1);
-        kakuroGrid.setHgap(1);
-        kakuroGrid.setPadding(new Insets(10, 10, 10, 10));
-        kakuroGrid.setStyle("-fx-background-color: white;");
+    
+    
+// Kakuro-grid
+   private void createKakuroGrid() {
+        this.kakuroGrid.setAlignment(Pos.CENTER);
+        this.kakuroGrid.setVgap(1);
+        this.kakuroGrid.setHgap(1);
+        this.kakuroGrid.setPadding(new Insets(10, 10, 10, 10));
+        this.kakuroGrid.setStyle("-fx-background-color: white;");
         for (int y = 0; y < this.nRows; y++) {
             for (int x = 0; x < this.nCols; x++) {
                 if (this.puzzle.checkSquare(y, x)) {
                     this.buttons[y][x] = new Button("  ");
                     this.buttons[y][x].setFont(Font.font("Helvetica", 40));
                     this.buttons[y][x].setStyle("-fx-text-fill: green");
-                    kakuroGrid.add(buttons[y][x], x, y);
+                    this.kakuroGrid.add(buttons[y][x], x, y);
                     int rx = x;
                     int ry = y;
                     this.buttons[y][x].setOnAction((event) -> {
@@ -136,11 +138,10 @@ public class GameUi {
                 } else {
                     StackPane square = new StackPane(); 
                     createSquare(square, puzzle.getSquareRowSum(y, x), puzzle.getSquareColSum(y, x));
-                    kakuroGrid.add(square, x, y);
+                    this.kakuroGrid.add(square, x, y);
                 }
             }
         }
-        return kakuroGrid;
     }
     
     
@@ -177,8 +178,9 @@ public class GameUi {
                 square.getChildren().addAll(bL);
         }
     }
-    
-    private void errorMessage(int res, Label infoText) {
+
+// Info message    
+    private void errorMessage(int res) {
         String tx1 = "";
         int errCol = res / 8;
         res = res  % 8;
@@ -188,14 +190,15 @@ public class GameUi {
             tx1 = "VIRHE: ";
         }
         if (res > 0) {
-            tx1 = tx1 + "kaksi samaa numeroa ";
+            tx1 = tx1 + "kaksi samaa ";
         }
         if (errRow > 0 || errCol > 0) {
             tx1 = tx1 + ", summa ei täsmää ";
         }
-        infoText.setText(tx1);
+        this.infoText.setText(tx1);
     }
-    
+
+// Virheellisten numeroiden merkkaaminen punaisella    
     private void errorNumbers(int res, int y, int x) {
         int xStart = this.puzzle.getRowStart(y,x);
         int xSquares = this.puzzle.getRowSquares(y,x);
@@ -215,7 +218,8 @@ public class GameUi {
             redRow(y, xStart, xSquares);
         }
     }
-    
+
+// Ok numerot vihreällä    
     private void okNumbers(int y, int x) {
         int xStart = this.puzzle.getRowStart(y,x);
         int xSquares = this.puzzle.getRowSquares(y,x);

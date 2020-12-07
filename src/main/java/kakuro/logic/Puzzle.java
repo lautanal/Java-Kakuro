@@ -2,10 +2,6 @@ package kakuro.logic;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author lasselautanala
- */
 public class Puzzle {
 
     private Map map;
@@ -27,8 +23,8 @@ public class Puzzle {
         initColumns();
     }
     
+// Ruutuolioiden initialisointi
     public void initSquares() {
-// Ruutujen initialisointi
         for (int i = 0; i < this.nRows; i++) {
             for (int j = 0; j < this.nCols; j++) {
                 if (this.map.getChar(i, j) != '#') {
@@ -39,8 +35,8 @@ public class Puzzle {
         }
     }
     
-    public void initRows() {
 // Rivien alustus ja rivisummien laskenta
+    public void initRows() {
         for (int i = 0; i < this.nRows; i++) {
             Row r1 = null;
             int rowStart = 0;
@@ -60,8 +56,8 @@ public class Puzzle {
         }
     }
 
-    public void initColumns() {
 // Sarakkeiden alustus ja sarakesummien laskenta
+    public void initColumns() {
         for (int j = 0; j < this.nCols; j++) {
             Column c1 = null;
             int colStart = 0;
@@ -101,30 +97,27 @@ public class Puzzle {
         return this.squares[i][j];
     }
     
-    public int setSquare(int i, int j, int number) {
 // Numeron laittaminen ruutuun
-//        this.map.setChar(i, j, (char) (number + 48));
+    public int setSquare(int i, int j, int number) {
         return squares[i][j].setNumber(number);
     }
 
     
-    public int zeroSquare(int i, int j) {
 // Numeron pyyhkiminen pois
-//        this.map.setChar(i, j, (char) (number + 48));
+    public int zeroSquare(int i, int j) {
         return squares[i][j].zeroNumber();
     }
 
-    public boolean checkSquare(int i, int j) {
 // Tarkistetaan, voiko ruutuun laittaa numeron
+    public boolean checkSquare(int i, int j) {
         if (this.squares[i][j] == null) {
-//       if (i < 1 || i >= this.nRows || j < 1 || j >= this.nCols || this.map.getChar(i, j) == '#') {
             return false;
         }
         return true;
     }
     
-    public boolean checkCompleted() {
 // Tarkistetaan, onko ruudukko valmis
+    public boolean checkCompleted() {
         for (int i = 0; i < this.nRows; i++) {
             for (int j = 0; j < this.nCols; j++) {
                 if (this.squares[i][j] != null) {

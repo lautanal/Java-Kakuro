@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
+// Java FX aloitus
 
 public class HelloFX extends Application {
 
@@ -16,9 +17,9 @@ public class HelloFX extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Kakuro");
-        GameUi gameboard = new GameUi();
+        GameUi gameUi = new GameUi();
 
-        Scene scene = new Scene(gameboard.getScene());
+        Scene scene = new Scene(gameUi.getScene());
         primaryStage.setScene(scene);
         primaryStage.show();
         

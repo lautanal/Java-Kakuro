@@ -11,28 +11,28 @@ public class Square {
         this.correct = correct;
     }
 
-    public Row getRow() {
 // Ruudun rivin hakeminen
+    public Row getRow() {
         return this.row;
     }
 
-    public void setRow(Row row) {
 // Ruudun rivin merkitseminen
+    public void setRow(Row row) {
         this.row = row;
     }
 
+// Ruudun sarakkeen asetus
     public Column getColumn() {
-// Ruudun sarakkeen hakeminen
         return this.column;
     }
 
+// Ruudun sarakkeen asetus
     public void setColumn(Column column) {
-// Ruudun sarakkeen merkitseminen
         this.column = column;
     }
 
-    public int setNumber(int number) {
 // Ruudun numeron asettaminen
+    public int setNumber(int number) {
         if (this.number == 0) {
             this.number = number;
             int res = this.row.addNumber(number);
@@ -45,8 +45,8 @@ public class Square {
         }
     }
 
-    public int zeroNumber() {
 // Ruudun numeron nollaus
+    public int zeroNumber() {
         if (this.number == 0) {
             return 0;
         } else {
@@ -61,13 +61,13 @@ public class Square {
         return number;
     }
 
-    public int getCorrect() {
 // Oikea tulos
+    public int getCorrect() {
         return this.correct;
     }
 
-    public boolean checkCorrect() {
 // Tarkistetaan, onko ruudun numero oikein
+    public boolean checkCorrect() {
         if (this.number == this.correct) {
             return true;
         }
