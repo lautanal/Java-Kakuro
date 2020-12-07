@@ -28,7 +28,7 @@ import kakuro.logic.Puzzle;
  * @author Lasse
  */
 
-public class Gameboard {
+public class GameUi {
     private int gamenr;
     private Puzzle puzzle;
     private int nRows;
@@ -39,7 +39,7 @@ public class Gameboard {
     private int yfocus;
     private boolean completed;
 
-    public Gameboard() {
+    public GameUi() {
         Random rn = new Random();
         this.gamenr = rn.nextInt(9) + 2;
         this.puzzle = new Puzzle(this.gamenr);
@@ -70,37 +70,37 @@ public class Gameboard {
         numberGrid.setHgap(5);
         numberGrid.setPadding(new Insets(10, 10, 10, 10));
         for (int x = 0; x < 10; x++) {
-                this.numbers[x] = new Button(" ");
-                this.numbers[x].setFont(Font.font("Helvetica", 25));
-                if (x == 0) {
-                    this.numbers[x].setText("X");
+            this.numbers[x] = new Button(" ");
+            this.numbers[x].setFont(Font.font("Helvetica", 25));
+            if (x == 0) {
+                this.numbers[x].setText("X");
+            } else {
+                this.numbers[x].setText(Integer.toString(x));
+            }
+            numberGrid.add(numbers[x], x, 1);
+            int rx = x;
+            this.numbers[x].setOnAction((event) -> {
+                int res = 0;
+                if (rx == 0) {
+                    this.buttons[this.yfocus][this.xfocus].setText("  ");
+                    res = puzzle.zeroSquare(this.yfocus,this.xfocus);
                 } else {
-                    this.numbers[x].setText(Integer.toString(x));
+                    this.buttons[this.yfocus][this.xfocus].setText(Integer.toString(rx));
+                    res = puzzle.setSquare(this.yfocus,this.xfocus, rx);
                 }
-                numberGrid.add(numbers[x], x, 1);
-                int rx = x;
-                this.numbers[x].setOnAction((event) -> {
-                    int res = 0;
-                    if (rx == 0) {
-                        this.buttons[this.yfocus][this.xfocus].setText("  ");
-                        res = puzzle.zeroSquare(this.yfocus,this.xfocus);
-                    } else {
-                        this.buttons[this.yfocus][this.xfocus].setText(Integer.toString(rx));
-                        res = puzzle.setSquare(this.yfocus,this.xfocus, rx);
+                if (res > 0) {
+                    errorNumbers(res, this.yfocus, this.xfocus);
+                    errorMessage(res, infoText);
+                } else {
+                    okNumbers(this.yfocus, this.xfocus);
+                    String tx1 = "";
+                    if (puzzle.checkCompleted()) {
+                       tx1 = "ONNITTELUT, RATKAISIT TEHTÄVÄN";
+                       this.completed = true;
                     }
-                    if (res > 0) {
-                        errorNumbers(res, this.yfocus, this.xfocus);
-                        errorMessage(res, infoText);
-                    } else {
-                        okNumbers(this.yfocus, this.xfocus);
-                        String tx1 = "";
-                        if (puzzle.checkCompleted()) {
-                           tx1 = "ONNITTELUT, RATKAISIT TEHTÄVÄN";
-                           this.completed = true;
-                        }
-                        infoText.setText(tx1);
-                   }
-                });
+                    infoText.setText(tx1);
+               }
+            });
         }
         
 // Kakuro-ristikko

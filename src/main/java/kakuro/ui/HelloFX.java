@@ -16,7 +16,7 @@ public class HelloFX extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Kakuro");
-        Gameboard gameboard = new Gameboard();
+        GameUi gameboard = new GameUi();
 
         Scene scene = new Scene(gameboard.getScene());
         primaryStage.setScene(scene);
