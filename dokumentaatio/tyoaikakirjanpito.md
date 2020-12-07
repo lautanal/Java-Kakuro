@@ -12,4 +12,6 @@
 | 30.11. | 3   | Käyttöliittymän tekoa|
 | 01.12. | 8    | Käyttöliittymän tekoa|
 | 01.12. | 3    | Käyttöliittymän parantelua, värien lisääminen|
-| yht    | 40   | 
+| 03.12. | 8    | Käyttöliittymän parantelua, dokumentaatiota
+| 07.12. | 5    | Käyttöliittymän muutoksia
+ yht    | 53   | 
