@@ -2,6 +2,10 @@ package kakuro.logic;
 
 import java.util.ArrayList;
 
+    /**
+    * Vaakarivin logiikasta vastaava luokka
+    *
+    */
 public class Row {
     private int yRow;
     private int xStart;
@@ -10,7 +14,6 @@ public class Row {
     private int[] numbers;
     private int count;
     private int sum;
-//    private ArrayList<Square> squareList;
 
     public Row() {
         this.nSquares = 0;
@@ -18,16 +21,21 @@ public class Row {
         this.numbers = new int[10];
         this.count = 0;
         this.sum = 0;
-//        this.squareList = new ArrayList<>();
     }
 
-// Rivin aloitus    
+    /**
+    * Rivin alun paikan talletus
+    *
+    */
     public void setRowStart(int yRow, int xStart) {
         this.yRow = yRow;
         this.xStart = xStart;
     }
     
-// Ruudun lisäys riviin
+    /**
+    * Ruudun lisäys riviin
+    *
+    */
     public void addSquare(Square square) {
         this.nSquares += 1;
         this.correctSum += square.getCorrect();
@@ -35,7 +43,10 @@ public class Row {
         square.setRow(this);
     }
 
-// Uuden numeron talletus riviin (uusi numero)  
+    /**
+    * Uuden numeron lisäys
+    *
+    */
     public int addNumber(int number) {
         this.numbers[number] += 1;
         this.count += 1;
@@ -50,7 +61,10 @@ public class Row {
         return res;
     }
 
-// Ruudun numeron vaihtaminen    
+    /**
+    * Ruudun numeron vaihtaminen
+    *
+    */
     public int changeNumber(int oldNumber, int newNumber) {
         this.numbers[oldNumber] -= 1;
         this.numbers[newNumber] += 1;
@@ -65,7 +79,10 @@ public class Row {
         return res;
     }
 
-// Ruudun numeron nollaus    
+    /**
+    * Ruudun numeron poistaminen
+    *
+    */
     public int zeroNumber(int oldNumber) {
         this.numbers[oldNumber] -= 1;
         this.count -= 1;
@@ -80,22 +97,34 @@ public class Row {
         return res;
     }
     
-// Rivin alku x
+    /**
+    * Rivin alku x
+    *
+    */
     public int getStart() {
         return this.xStart;
     }
     
-// Rivin ruutujen lukumäärä
+    /**
+    * Rivin ruutujen lukumäärä
+    *
+    */
     public int getSquares() {
         return this.nSquares;
     }
     
-// Oikea rivisumma
+    /**
+    * ROikea rivisumma
+    *
+    */
     public int getCorrectSum() {
         return this.correctSum;
     }
 
-// Rivisumman tarkistus
+    /**
+    * Rivisumman tarkistus
+    *
+    */
     public boolean checkSum() {
         if (this.count == this.nSquares && this.sum != this.correctSum) {
             return false;
@@ -106,7 +135,10 @@ public class Row {
         return true;
     }
 
-// Saman numeron tarkistus    
+    /**
+    * Tarkistetaan, onko kahta samaa numeroa rivissä
+    *
+    */
     public boolean checkSame() {
         for (int i = 1; i <= 9; i++) {
             if (this.numbers[i] > 1) {

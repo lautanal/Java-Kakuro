@@ -3,6 +3,10 @@ package kakuro.logic;
 import java.io.File;
 import java.util.Scanner;
 
+    /**
+    * Pelialueen luomisesta vastaava luokka
+    *
+    */
 public class Map {
 
     private char[][] map;
@@ -16,23 +20,42 @@ public class Map {
         this.nCols = this.map[0].length;
     }
 
+    /**
+    * Pelialueen rivien lukumäärä
+    *
+    */
     public int getnRows() {
         return this.nRows;
     }
 
+    /**
+    * Pelialueen sarakkeiden lukumäärä
+    *
+    */
     public int getnCols() {
         return this.nCols;
     }
 
+    /**
+    * Ruudun merkin haku
+    *
+    */
     public char getChar(int i, int j) {
         return this.map[i][j];
     }
 
+    /**
+    * Ruudun merkin asetus
+    *
+    */
     public void setChar(int i, int j, char c) {
         this.map[i][j] = c;
     }
 
-// Kakuro-ristikon luku tiedostosta
+    /**
+    * Pelialueen luku tiedostosta
+    *
+    */
     public char[][] puzzleRead(String fname, int n, int m) {
         char[][] t = new char[n][m];
         try {

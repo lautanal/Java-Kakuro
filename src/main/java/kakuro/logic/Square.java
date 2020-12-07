@@ -1,5 +1,9 @@
 package kakuro.logic;
 
+    /**
+    * Ruudun logiikasta vastaava luokka
+    *
+    */
 public class Square {
     private Row row;
     private Column column;
@@ -11,27 +15,42 @@ public class Square {
         this.correct = correct;
     }
 
-// Ruudun rivin hakeminen
+    /**
+    * Ruudun rivin hakeminen
+    *
+    */
     public Row getRow() {
         return this.row;
     }
 
-// Ruudun rivin merkitseminen
+    /**
+    * Ruudun rivin merkitseminen
+    *
+    */
     public void setRow(Row row) {
         this.row = row;
     }
 
-// Ruudun sarakkeen asetus
+    /**
+    * Ruudun sarakkeen hakeminen
+    *
+    */
     public Column getColumn() {
         return this.column;
     }
 
-// Ruudun sarakkeen asetus
+    /**
+    * Ruudun sarakkeen asettaminen
+    *
+    */
     public void setColumn(Column column) {
         this.column = column;
     }
 
-// Ruudun numeron asettaminen
+    /**
+    * Ruudun numeron muuttaminen
+    *
+    */
     public int setNumber(int number) {
         if (this.number == 0) {
             this.number = number;
@@ -45,7 +64,10 @@ public class Square {
         }
     }
 
-// Ruudun numeron nollaus
+    /**
+    * Ruudun numeron pyyhkiminen pois
+    *
+    */
     public int zeroNumber() {
         if (this.number == 0) {
             return 0;
@@ -57,16 +79,26 @@ public class Square {
         }
     }
 
+    /**
+    * Ruudussa oleva numero
+    *
+    */
     public int getNumber() {
         return number;
     }
 
-// Oikea tulos
+    /**
+    * Ruudun oikea tulos
+    *
+    */
     public int getCorrect() {
         return this.correct;
     }
 
-// Tarkistetaan, onko ruudun numero oikein
+    /**
+    * Tarkistetaan, onko ruudun numero oikein
+    *
+    */
     public boolean checkCorrect() {
         if (this.number == this.correct) {
             return true;

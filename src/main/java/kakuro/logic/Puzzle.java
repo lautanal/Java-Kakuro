@@ -2,6 +2,10 @@ package kakuro.logic;
 
 import java.util.ArrayList;
 
+    /**
+    * Pelilaudan logiikasta vastaava luokka
+    *
+    */
 public class Puzzle {
 
     private Map map;
@@ -23,19 +27,24 @@ public class Puzzle {
         initColumns();
     }
     
-// Ruutuolioiden initialisointi
+    /**
+    * Ruutujen initialisointi
+    *
+    */
     public void initSquares() {
         for (int i = 0; i < this.nRows; i++) {
             for (int j = 0; j < this.nCols; j++) {
                 if (this.map.getChar(i, j) != '#') {
                     this.squares[i][j] = new Square(this.map.getChar(i, j) - 48);
-//                    this.map.setChar(i, j, '_');
                 }
             }
         }
     }
     
-// Rivien alustus ja rivisummien laskenta
+    /**
+    * Rivien alustus ja rivisummien laskenta
+    *
+    */
     public void initRows() {
         for (int i = 0; i < this.nRows; i++) {
             Row r1 = null;
@@ -56,7 +65,10 @@ public class Puzzle {
         }
     }
 
-// Sarakkeiden alustus ja sarakesummien laskenta
+    /**
+    * Sarakkeiden alustus ja sarakesummien laskenta
+    *
+    */
     public void initColumns() {
         for (int j = 0; j < this.nCols; j++) {
             Column c1 = null;
@@ -77,10 +89,18 @@ public class Puzzle {
         }
     }
 
+    /**
+    * Pelialueen rivien lukumäärä
+    *
+    */
     public int getnRows() {
         return this.nRows;
     }
 
+    /**
+    * Pelialueen sarakkeiden lukumäärä
+    *
+    */
     public int getnCols() {
         return this.nCols;
     }
@@ -93,22 +113,36 @@ public class Puzzle {
         return this.colSums[i][j];
     }
 
+    /**
+    * Ruutu paikassa i,j
+    *
+    */
     public Square getSquare(int i, int j) {
         return this.squares[i][j];
     }
     
-// Numeron laittaminen ruutuun
+
+    /**
+    * Numeron laittaminen ruutuun
+    *
+    */
     public int setSquare(int i, int j, int number) {
         return squares[i][j].setNumber(number);
     }
 
     
-// Numeron pyyhkiminen pois
+    /**
+    * Numeron pyyhkiminen pois
+    *
+    */
     public int zeroSquare(int i, int j) {
         return squares[i][j].zeroNumber();
     }
 
-// Tarkistetaan, voiko ruutuun laittaa numeron
+    /**
+    * Tarkistetaan, voiko ruutuun laittaa numeron
+    *
+    */
     public boolean checkSquare(int i, int j) {
         if (this.squares[i][j] == null) {
             return false;
@@ -116,7 +150,10 @@ public class Puzzle {
         return true;
     }
     
-// Tarkistetaan, onko ruudukko valmis
+    /**
+    * Tarkistetaan, onko ruudukko valmis
+    *
+    */
     public boolean checkCompleted() {
         for (int i = 0; i < this.nRows; i++) {
             for (int j = 0; j < this.nCols; j++) {

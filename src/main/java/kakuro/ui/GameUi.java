@@ -57,6 +57,10 @@ public class GameUi {
         this.kakuroGrid = new GridPane();
     }
     
+    /**
+    * Scenen määritys
+    *
+    */
     public Scene getScene() {
 
 // Laudan koko        
@@ -110,7 +114,10 @@ public class GameUi {
     }
 
    
-// Numerovalinta-gridi        
+    /**
+    * Numerogridin grafiikka
+    *
+    */
     private void createNumberGrid() {
         this.numberGrid.setAlignment(Pos.TOP_LEFT);
         this.numberGrid.setVgap(5);
@@ -132,7 +139,10 @@ public class GameUi {
         }
     }
 
-// Valitun numeron laitto ruutuun    
+    /**
+    * Numeron muuttaminen
+    *
+    */
     public void setNumber(int rx) {
         int res = 0;
         if (rx == 0) {
@@ -156,7 +166,10 @@ public class GameUi {
        }
     }
 
-//  Uusi peli    
+    /**
+    * Uuden pelin aloitus
+    *
+    */
     private void newGameButton() {
         Button newGame = new Button("Uusi peli");
         this.numberGrid.add(newGame, 12, 1);
@@ -167,7 +180,10 @@ public class GameUi {
         });
     }
 
-// Uuden pelin alkuasetukset    
+    /**
+    * Uuden pelialueen määritykset
+    *
+    */
      public void newGame() {
         Random rn = new Random();
         this.gamenr = rn.nextInt(9) + 2;
@@ -185,7 +201,10 @@ public class GameUi {
         this.kakuroGrid = new GridPane();
     }
    
-// Kakuro-gridin piirtäminen
+    /**
+    * Kakuro-gridin grafiikka
+    *
+    */
     private void createKakuroGrid() {
         this.kakuroGrid.setAlignment(Pos.CENTER);
         this.kakuroGrid.setVgap(1);
@@ -215,7 +234,10 @@ public class GameUi {
     }
     
     
-// Ei-täytettävä ruutu
+    /**
+    * Ei-pelattavan ruudun grafiikka
+    *
+    */
     private void createSquare(StackPane square, int topRightNum, int bottomLeftNum) {
         Rectangle rect = new Rectangle(75, 75);
         rect.getStyleClass().add("white");
@@ -249,7 +271,10 @@ public class GameUi {
         }
     }
 
-// Info message    
+    /**
+    * Info-teksti
+    *
+    */
     private void errorMessage(int res) {
         String tx1 = "";
         int errCol = res / 8;
@@ -268,7 +293,10 @@ public class GameUi {
         this.infoText.setText(tx1);
     }
 
-// Virheellisten numeroiden merkkaaminen punaisella    
+    /**
+    * Virheellisten numeroiden väritys punaisella
+    *
+    */
     private void errorNumbers(int res, int y, int x) {
         int xStart = this.puzzle.getRowStart(y,x);
         int xSquares = this.puzzle.getRowSquares(y,x);
@@ -289,7 +317,10 @@ public class GameUi {
         }
     }
 
-// Ok numerot vihreällä    
+    /**
+    * OK-numerot vihreällä
+    *
+    */
     private void okNumbers(int y, int x) {
         int xStart = this.puzzle.getRowStart(y,x);
         int xSquares = this.puzzle.getRowSquares(y,x);
@@ -299,6 +330,10 @@ public class GameUi {
         greenRow(y, xStart, xSquares);
     }
     
+    /**
+    * Punainen rivi
+    *
+    */
     private void redRow(int yRow, int xStart, int nSquares) {
         int x = xStart;
         for (int i = 0; i < nSquares; i++) {
@@ -307,6 +342,10 @@ public class GameUi {
         }
     }
     
+    /**
+    * Vihreä rivi
+    *
+    */
     private void greenRow(int yRow, int xStart, int nSquares) {
         int x = xStart;
         for (int i = 0; i < nSquares; i++) {
@@ -315,6 +354,10 @@ public class GameUi {
         }
     }
     
+    /**
+    * Punainen sarake
+    *
+    */
     private void redColumn(int xColumn, int yStart, int nSquares) {
         int y = yStart;
         for (int i = 0; i < nSquares; i++) {
@@ -323,6 +366,10 @@ public class GameUi {
         }
     }
     
+    /**
+    * Vihreä sarake
+    *
+    */
     private void greenColumn(int xColumn, int yStart, int nSquares) {
         int y = yStart;
         for (int i = 0; i < nSquares; i++) {

@@ -17,6 +17,7 @@ Sovellus on japanilainen Kakuro-numeroristikko.  Ruudukossa on tyhjiä ruutuja, 
 ## Release
 
 [Viikko 6](https://github.com/lautanal/ot-harjoitustyo/releases/tag/Viikko6)
+Lataa kakuro.jar -tiedosto ja puzzle-kansio, jossa on pelattavat ristikot.
 
 ## Komentorivitoiminnot
 
