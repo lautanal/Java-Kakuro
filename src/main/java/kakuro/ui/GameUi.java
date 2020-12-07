@@ -76,11 +76,12 @@ public class GameUi {
 // Kakuro-gridi
         createKakuroGrid();
 
-// Layout
-        gameLayout.setTop(infoText);
-        gameLayout.setCenter(numberGrid);
-        gameLayout.setBottom(kakuroGrid);
-        
+// Pelin layout
+        this.gameLayout.setTop(this.infoText);
+        this.gameLayout.setCenter(this.numberGrid);
+        this.gameLayout.setBottom(this.kakuroGrid);
+
+// Numerovalinnat näppäimistöltä        
         this.scene = new Scene(gameLayout);
         this.scene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.DIGIT0) {
@@ -131,6 +132,7 @@ public class GameUi {
         }
     }
 
+// Valitun numeron laitto ruutuun    
     public void setNumber(int rx) {
         int res = 0;
         if (rx == 0) {
@@ -154,7 +156,6 @@ public class GameUi {
        }
     }
 
-    
 //  Uusi peli    
     private void newGameButton() {
         Button newGame = new Button("Uusi peli");
