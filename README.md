@@ -14,6 +14,9 @@ Sovellus on japanilainen Kakuro-numeroristikko.  Ruudukossa on tyhjiä ruutuja, 
 
 [Työaikakirjanpito](https://github.com/lautanal/ot-harjoitustyo//blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
+## Release
+
+[Viikko 5](https://github.com/lautanal/ot-harjoitustyo/releases/tag/Viikko6)
 
 ## Komentorivitoiminnot
 
