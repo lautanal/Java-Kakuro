@@ -65,11 +65,6 @@ public class GameUi {
 
 // Laudan koko        
         this.gameLayout.setPrefSize(300, 300);
-        
-// Info text        
-        infoText.setFont(Font.font("Helvetica", 30));
-        infoText.setAlignment(Pos.TOP_CENTER);
-        infoText.setPadding(new Insets(10, 10, 10, 10));
 
 // Numerovalinta-gridi        
         createNumberGrid();
@@ -79,6 +74,11 @@ public class GameUi {
         
 // Kakuro-gridi
         createKakuroGrid();
+        
+// Info text        
+        infoText.setFont(Font.font("Helvetica", 30));
+        infoText.setAlignment(Pos.TOP_CENTER);
+        infoText.setPadding(new Insets(10, 10, 10, 10));
 
 // Pelin layout
         this.gameLayout.setTop(this.numberGrid);
@@ -94,6 +94,10 @@ public class GameUi {
         return this.scene;
     }
 
+    /**
+    * Numervalinnat näppäimistöltä
+    *
+    */
     private void keyPressEvents() {
         this.scene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.DIGIT0) {
