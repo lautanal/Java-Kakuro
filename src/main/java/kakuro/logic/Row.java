@@ -44,7 +44,7 @@ public class Row {
     }
 
     /**
-    * Ruudun numeron vaihtaminen
+    * Numeron lisäys riviin
     *
     */
     public int changeNumber(int oldNumber, int newNumber) {

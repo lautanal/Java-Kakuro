@@ -49,7 +49,7 @@ public class Column {
 
 
     /**
-    * Sarakkeen numeron muuttaminen
+    * Numeron lisäys sarakkeeseen
     *
     */
     public int changeNumber(int oldNumber, int newNumber) {

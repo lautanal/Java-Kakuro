@@ -85,8 +85,16 @@ public class GameUi {
         this.gameLayout.setCenter(this.kakuroGrid);
         this.gameLayout.setBottom(this.infoText);
 
-// Numerovalinnat näppäimistöltä        
+// Uusi scene        
         this.scene = new Scene(gameLayout);
+        
+// Numerovalinnat näppäimistöltä
+        keyPressEvents();
+
+        return this.scene;
+    }
+
+    private void keyPressEvents() {
         this.scene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.DIGIT0) {
                 setNumber(0);
@@ -109,11 +117,10 @@ public class GameUi {
             } else if (event.getCode() == KeyCode.DIGIT9) {
                 setNumber(9);
             }
-        });       
-        return this.scene;
+        }); 
     }
-
-   
+    
+    
     /**
     * Numerogridin grafiikka
     *

@@ -44,8 +44,6 @@ public class Puzzle {
                         this.yStart = i;
                         this.xStart = j;
                         startXY = true;
-                        System.out.println("YSTART: " + i);
-                        System.out.println("XSTART: " + j);
                     }
                     this.squares[i][j] = new Square(this.map.getChar(i, j) - 48);
                 }
