@@ -14,6 +14,8 @@ public class Puzzle {
     private Square[][] squares;
     private int[][] rowSums;
     private int[][] colSums;
+    private int xStart;
+    private int yStart;
 
     public Puzzle(int mapNr) {
         this.map = new Map(mapNr); 
@@ -22,6 +24,8 @@ public class Puzzle {
         this.squares = new Square[this.nRows][this.nCols];
         this.rowSums = new int[nRows][nCols];
         this.colSums = new int[nRows][nCols];
+        this.xStart = 0;
+        this.yStart = 0;
         initSquares();
         initRows();
         initColumns();
@@ -32,9 +36,17 @@ public class Puzzle {
     *
     */
     public void initSquares() {
+        boolean startXY = false;
         for (int i = 0; i < this.nRows; i++) {
             for (int j = 0; j < this.nCols; j++) {
                 if (this.map.getChar(i, j) != '#') {
+                    if (!startXY) {
+                        this.yStart = i;
+                        this.xStart = j;
+                        startXY = true;
+                        System.out.println("YSTART: " + i);
+                        System.out.println("XSTART: " + j);
+                    }
                     this.squares[i][j] = new Square(this.map.getChar(i, j) - 48);
                 }
             }
@@ -103,6 +115,14 @@ public class Puzzle {
     */
     public int getnCols() {
         return this.nCols;
+    }
+    
+    public int getXstart() {
+        return this.xStart;
+    }
+    
+    public int getYstart() {
+        return this.yStart;
     }
 
     public int getSquareRowSum(int i, int j) {

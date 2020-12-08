@@ -49,8 +49,8 @@ public class GameUi {
         this.buttons = new Button[this.nRows][this.nCols];
         this.numbers = new Button[10];
         this.completed = false;
-        this.xfocus = 0;
-        this.yfocus = 0;
+        this.xfocus = this.puzzle.getXstart();;
+        this.yfocus = this.puzzle.getYstart();;
         this.gameLayout = new BorderPane();
         this.infoText = new Label("");
         this.numberGrid = new GridPane();
@@ -194,8 +194,8 @@ public class GameUi {
         this.buttons = new Button[this.nRows][this.nCols];
         this.numbers = new Button[10];
         this.completed = false;
-        this.xfocus = 0;
-        this.yfocus = 0;
+        this.xfocus = this.puzzle.getXstart();;
+        this.yfocus = this.puzzle.getYstart();;
         this.gameLayout = new BorderPane();
         this.infoText = new Label("");
         this.numberGrid = new GridPane();
