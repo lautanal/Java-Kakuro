@@ -44,31 +44,25 @@ public class Row {
     }
 
     /**
-    * Uuden numeron lisäys
-    *
-    */
-    public int addNumber(int number) {
-        this.numbers[number] += 1;
-        this.count += 1;
-        this.sum += number;
-        int res = 0;
-        if (!this.checkSame()) {
-            res = 1;
-        }
-        if (!this.checkSum()) {
-            res += 4;
-        }
-        return res;
-    }
-
-    /**
     * Ruudun numeron vaihtaminen
     *
     */
     public int changeNumber(int oldNumber, int newNumber) {
-        this.numbers[oldNumber] -= 1;
-        this.numbers[newNumber] += 1;
-        this.sum = this.sum - oldNumber + newNumber;
+        if (newNumber != oldNumber) {
+            if (oldNumber == 0) {
+                this.numbers[newNumber] += 1;
+                this.count += 1;
+                this.sum += newNumber;
+            } else if (newNumber == 0) {
+                this.numbers[oldNumber] -= 1;
+                this.count -= 1;
+                this.sum -= oldNumber;
+            } else {
+                this.numbers[oldNumber] -= 1;
+                this.numbers[newNumber] += 1;
+                this.sum = this.sum - oldNumber + newNumber;
+            }
+        } 
         int res = 0;
         if (!this.checkSame()) {
             res = 1;
@@ -79,24 +73,6 @@ public class Row {
         return res;
     }
 
-    /**
-    * Ruudun numeron poistaminen
-    *
-    */
-    public int zeroNumber(int oldNumber) {
-        this.numbers[oldNumber] -= 1;
-        this.count -= 1;
-        this.sum = this.sum - oldNumber;
-        int res = 0;
-        if (!this.checkSame()) {
-            res = 1;
-        }
-        if (!this.checkSum()) {
-            res += 4;
-        }
-        return res;
-    }
-    
     /**
     * Rivin alku x
     *

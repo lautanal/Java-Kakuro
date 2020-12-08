@@ -81,9 +81,9 @@ public class GameUi {
         createKakuroGrid();
 
 // Pelin layout
-        this.gameLayout.setTop(this.infoText);
-        this.gameLayout.setCenter(this.numberGrid);
-        this.gameLayout.setBottom(this.kakuroGrid);
+        this.gameLayout.setTop(this.numberGrid);
+        this.gameLayout.setCenter(this.kakuroGrid);
+        this.gameLayout.setBottom(this.infoText);
 
 // Numerovalinnat näppäimistöltä        
         this.scene = new Scene(gameLayout);
@@ -147,7 +147,7 @@ public class GameUi {
         int res = 0;
         if (rx == 0) {
             this.buttons[this.yfocus][this.xfocus].setText("  ");
-            res = puzzle.zeroSquare(this.yfocus,this.xfocus);
+            res = puzzle.setSquare(this.yfocus,this.xfocus, 0);
         } else {
             this.buttons[this.yfocus][this.xfocus].setText(Integer.toString(rx));
             res = puzzle.setSquare(this.yfocus,this.xfocus, rx);
@@ -172,6 +172,7 @@ public class GameUi {
     */
     private void newGameButton() {
         Button newGame = new Button("Uusi peli");
+        newGame.setFont(Font.font("Helvetica", 25));
         this.numberGrid.add(newGame, 12, 1);
         newGame.setOnAction((event) -> {
             this.newGame();

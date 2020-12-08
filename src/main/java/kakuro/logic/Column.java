@@ -47,50 +47,27 @@ public class Column {
         square.setColumn(this);
     }
 
-    /**
-    * Uuden numeron lisäys sarakkeeseen
-    *
-    */
-    public int addNumber(int number) {
-        this.numbers[number] += 1;
-        this.count += 1;
-        this.sum += number;
-        int res = 0;
-        if (!this.checkSame()) {
-            res = 2;
-        }
-        if (!this.checkSum()) {
-            res += 8;
-        }
-        return res;
-    }
 
     /**
-    * Vanhan numeron muuttaminen
+    * Sarakkeen numeron muuttaminen
     *
     */
     public int changeNumber(int oldNumber, int newNumber) {
-        this.numbers[oldNumber] -= 1;
-        this.numbers[newNumber] += 1;
-        this.sum = this.sum - oldNumber + newNumber;
-        int res = 0;
-        if (!this.checkSame()) {
-            res = 2;
-        }
-        if (!this.checkSum()) {
-            res += 8;
-        }
-        return res;
-    }
-
-    /**
-    * Ruudun numeron nollaus
-    *
-    */
-    public int zeroNumber(int oldNumber) {
-        this.numbers[oldNumber] -= 1;
-        this.count -= 1;
-        this.sum = this.sum - oldNumber;
+        if (newNumber != oldNumber) {
+            if (oldNumber == 0) {
+                this.numbers[newNumber] += 1;
+                this.count += 1;
+                this.sum += newNumber;
+            } else if (newNumber == 0) {
+                this.numbers[oldNumber] -= 1;
+                this.count -= 1;
+                this.sum -= oldNumber;
+            } else {
+                this.numbers[oldNumber] -= 1;
+                this.numbers[newNumber] += 1;
+                this.sum = this.sum - oldNumber + newNumber;
+            }
+        } 
         int res = 0;
         if (!this.checkSame()) {
             res = 2;

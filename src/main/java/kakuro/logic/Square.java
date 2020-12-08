@@ -40,7 +40,7 @@ public class Square {
     }
 
     /**
-    * Ruudun sarakkeen asettaminen
+    * Ruudun sarakkeen merkitseminen
     *
     */
     public void setColumn(Column column) {
@@ -52,35 +52,14 @@ public class Square {
     *
     */
     public int setNumber(int number) {
-        if (this.number == 0) {
-            this.number = number;
-            int res = this.row.addNumber(number);
-            return res + this.column.addNumber(number);
-        } else {
-            int oldNumber = this.number;
-            this.number = number;
-            int res = this.row.changeNumber(oldNumber, number);
-            return res + this.column.changeNumber(oldNumber, number);
-        }
+        int oldNumber = this.number;
+        this.number = number;
+        int res = this.row.changeNumber(oldNumber, number);
+        return res + this.column.changeNumber(oldNumber, number);
     }
 
     /**
-    * Ruudun numeron pyyhkiminen pois
-    *
-    */
-    public int zeroNumber() {
-        if (this.number == 0) {
-            return 0;
-        } else {
-            int oldNumber = this.number;
-            this.number = 0;
-            int res = this.row.zeroNumber(oldNumber);
-            return res + this.column.zeroNumber(oldNumber);
-        }
-    }
-
-    /**
-    * Ruudussa oleva numero
+    * Ruudussa olevan numeron haku
     *
     */
     public int getNumber() {

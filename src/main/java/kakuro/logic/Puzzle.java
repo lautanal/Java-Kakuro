@@ -130,15 +130,6 @@ public class Puzzle {
         return squares[i][j].setNumber(number);
     }
 
-    
-    /**
-    * Numeron pyyhkiminen pois
-    *
-    */
-    public int zeroSquare(int i, int j) {
-        return squares[i][j].zeroNumber();
-    }
-
     /**
     * Tarkistetaan, voiko ruutuun laittaa numeron
     *

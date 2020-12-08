@@ -14,4 +14,5 @@
 | 01.12. | 3    | Käyttöliittymän parantelua, värien lisääminen|
 | 03.12. | 8    | Käyttöliittymän parantelua, dokumentaatiota
 | 07.12. | 7    | Käyttöliittymän muutoksia
- yht    | 54   | 
+| 08.12. | 5    | Käyttöliittymän muutoksia, Row- ja Column -luokan muutoksia
+yht    | 59   | 
