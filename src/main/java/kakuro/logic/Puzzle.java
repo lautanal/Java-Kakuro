@@ -67,6 +67,7 @@ public class Puzzle {
                         r1.setRowStart(i, j);
                     }
                     r1.addSquare(squares[i][j]);
+                    squares[i][j].setRow(r1);
                 } else if (r1 != null) {
                     rowSums[i][rowStart] = r1.getCorrectSum();
                     r1 = null;
@@ -91,6 +92,7 @@ public class Puzzle {
                         c1.setColumnStart(j, i);
                     }
                     c1.addSquare(squares[i][j]);
+                    squares[i][j].setColumn(c1);
                 } else if (c1 != null) {
                     colSums[colStart][j] = c1.getCorrectSum();
                     c1 = null;

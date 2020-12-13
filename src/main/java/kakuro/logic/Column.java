@@ -44,7 +44,7 @@ public class Column {
         this.nSquares += 1;
         this.correctSum += square.getCorrect();
 //        squareList.add(square);
-        square.setColumn(this);
+//        square.setColumn(this);
     }
 
 
@@ -95,7 +95,7 @@ public class Column {
     }
 
     /**
-    * oikea sarakesumma
+    * Oikea sarakesumma
     *
     */
     public int getCorrectSum() {

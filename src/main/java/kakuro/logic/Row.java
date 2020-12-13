@@ -40,7 +40,7 @@ public class Row {
         this.nSquares += 1;
         this.correctSum += square.getCorrect();
 //        squareList.add(square);
-        square.setRow(this);
+//        square.setRow(this);
     }
 
     /**

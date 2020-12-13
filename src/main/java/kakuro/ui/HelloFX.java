@@ -15,11 +15,8 @@ public class HelloFX extends Application {
     public void start(Stage gameWindow) throws Exception {
         gameWindow.setTitle("Kakuro");
         GameUi gameUi = new GameUi(gameWindow);
-
-        Scene scene = gameUi.getScene();
-        gameWindow.setScene(scene);
+        gameUi.getScene();
         gameWindow.show();
-        
     }
 
     public static void main(String[] args) {

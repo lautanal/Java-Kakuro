@@ -61,7 +61,7 @@ public class GameUi {
     * Scenen määritys
     *
     */
-    public Scene getScene() {
+    public void getScene() {
 
 // Laudan koko        
         this.gameLayout.setPrefSize(300, 300);
@@ -87,46 +87,17 @@ public class GameUi {
 
 // Uusi scene        
         this.scene = new Scene(gameLayout);
+        this.window.setScene(this.scene);
         
 // Numerovalinnat näppäimistöltä
         keyPressEvents();
 
-        return this.scene;
+        return;
     }
 
-    /**
-    * Numervalinnat näppäimistöltä
-    *
-    */
-    private void keyPressEvents() {
-        this.scene.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.DIGIT0) {
-                setNumber(0);
-            } else if (event.getCode() == KeyCode.DIGIT1) {
-                setNumber(1);
-            } else if (event.getCode() == KeyCode.DIGIT2) {
-                setNumber(2);
-            } else if (event.getCode() == KeyCode.DIGIT3) {
-                setNumber(3);
-            } else if (event.getCode() == KeyCode.DIGIT4) {
-                setNumber(4);
-            } else if (event.getCode() == KeyCode.DIGIT5) {
-                setNumber(5);
-            } else if (event.getCode() == KeyCode.DIGIT6) {
-                setNumber(6);
-            } else if (event.getCode() == KeyCode.DIGIT7) {
-                setNumber(7);
-            } else if (event.getCode() == KeyCode.DIGIT8) {
-                setNumber(8);
-            } else if (event.getCode() == KeyCode.DIGIT9) {
-                setNumber(9);
-            }
-        }); 
-    }
-    
     
     /**
-    * Numerogridin grafiikka
+    * Numerogridi
     *
     */
     private void createNumberGrid() {
@@ -176,7 +147,37 @@ public class GameUi {
             this.infoText.setText(tx);
        }
     }
-
+    
+    /**
+    * Numerovalinnat näppäimistöltä
+    *
+    */
+    private void keyPressEvents() {
+        this.scene.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.DIGIT0) {
+                setNumber(0);
+            } else if (event.getCode() == KeyCode.DIGIT1) {
+                setNumber(1);
+            } else if (event.getCode() == KeyCode.DIGIT2) {
+                setNumber(2);
+            } else if (event.getCode() == KeyCode.DIGIT3) {
+                setNumber(3);
+            } else if (event.getCode() == KeyCode.DIGIT4) {
+                setNumber(4);
+            } else if (event.getCode() == KeyCode.DIGIT5) {
+                setNumber(5);
+            } else if (event.getCode() == KeyCode.DIGIT6) {
+                setNumber(6);
+            } else if (event.getCode() == KeyCode.DIGIT7) {
+                setNumber(7);
+            } else if (event.getCode() == KeyCode.DIGIT8) {
+                setNumber(8);
+            } else if (event.getCode() == KeyCode.DIGIT9) {
+                setNumber(9);
+            }
+        }); 
+    }
+    
     /**
     * Uuden pelin aloitus
     *
@@ -188,7 +189,7 @@ public class GameUi {
         newGame.setOnAction((event) -> {
             this.newGame();
             this.getScene();
-            window.setScene(this.scene);
+//            window.setScene(this.scene);
         });
     }
 
