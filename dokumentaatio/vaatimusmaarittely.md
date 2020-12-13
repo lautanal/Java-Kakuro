@@ -8,13 +8,13 @@ Sovellus on japanilainen Kakuro-numeroristikko.  Ruudukossa on tyhjiä ruutuja, 
 
 Sovelluksella on alkuvaiheessa vain yksi käyttäjä eli pelaaja.  Myöhemmin voidaan lisätä admin-käyttäjä, joka voi tehdä esimerkiksi uusia ruudukoita.
 
-## Käyttöliittymäluonnos
+## Käyttöliittymä
 
 Sovellus koostuu yhdestä näkymästä eli pelilaudasta.
 
 Käyttö on suoraviivaista.  Käyttäjä valitsee ruudun ja antaa haluamansa numeron, joka ruutuun laitetaan. Jos käyttäjän antama numero ei toteuta ruudun ehtoja, numero muuttuu punaiseksi. Kun ruudukko on täynnä, käyttäjä näkee kulutetun ajan ja saa onnittelut.
 
-<img src="kakuro01.png" width="750">
+<img src="png/KakuroUi.png" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
 
