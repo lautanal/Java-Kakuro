@@ -22,11 +22,8 @@ Sovelluksen logiikka on rakennettu ohjelmallisesti kakuro.logic -pakkauksen luok
 Sovelluksen looginen luokkarakenne on kuvatttu alla.  
 <img src="png/class.png" width="750">
 
-
 Sovelluksen loogisen rakenteen luominen tapahtuu seuraavasti:
-
 <img src="png/Kakuroinit.png" width="750">
-
 - Käyttöliittymä luo Puzzle-luokan olion, joka kuvaa Kakuro-ristikkoa.
 - Puzzle-luokka luo Map-luokan olion, joka lukee tiedostosta Kakuro-ristikon tekstimuodossa
 -  Map-luokan tekstipohjaisen kartan perusteella luodaan Square-luokan oliot, jotka kuvaavat Kakuro-ristikon täytettäviä ruutuja.
@@ -35,7 +32,7 @@ Sovelluksen loogisen rakenteen luominen tapahtuu seuraavasti:
 
 
 Sovelluksen looginen toiminta pelin aikana tapahtuu seuraavasti:
-
+<img src="png/Kakuroplay.png" width="750">
 - Käyttäjä valisee ruudun, johon seuraava numero asetetaan.
 - Käyttäjä antaa ruutuun tulevan numeron graafisen käyttöliittymän tai näppäimistön välityksellä.
 - Puzzle-luokan olio kutsuu kyseisen ruudun Square-luokan metodia setNumber() , joka asettaa ruudun numeroksi valitun numeron.
