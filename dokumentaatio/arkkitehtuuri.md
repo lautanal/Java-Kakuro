@@ -23,16 +23,16 @@ Sovelluksen looginen luokkarakenne on kuvatttu alla.
 <img src="png/class.png" width="750">
 
 Sovelluksen loogisen rakenteen luominen tapahtuu seuraavasti:
-<img src="png/Kakuroinit.png" width="750">
 - Käyttöliittymä luo Puzzle-luokan olion, joka kuvaa Kakuro-ristikkoa.
 - Puzzle-luokka luo Map-luokan olion, joka lukee tiedostosta Kakuro-ristikon tekstimuodossa
 -  Map-luokan tekstipohjaisen kartan perusteella luodaan Square-luokan oliot, jotka kuvaavat Kakuro-ristikon täytettäviä ruutuja.
 - Square-luokan oliot käydään läpi ja niiden perusteella luodaan Row-luokan oliot, jotka kuvaavat ristikon vaakarivejä.
 - Samalla lailla luodaan Column-luokan oliot, jotka kuvaavat pystyrivejä.
+<img src="png/Kakuroinit.png" width="750">
 
 
-Sovelluksen looginen toiminta pelin aikana tapahtuu seuraavasti:
-<img src="png/Kakuroplay.png" width="750">
+
+Sovelluksen logiikka pelin aikana toimii seuraavasti:
 - Käyttäjä valisee ruudun, johon seuraava numero asetetaan.
 - Käyttäjä antaa ruutuun tulevan numeron graafisen käyttöliittymän tai näppäimistön välityksellä.
 - Puzzle-luokan olio kutsuu kyseisen ruudun Square-luokan metodia setNumber() , joka asettaa ruudun numeroksi valitun numeron.
@@ -41,3 +41,4 @@ Sovelluksen looginen toiminta pelin aikana tapahtuu seuraavasti:
 - Samalla lailla päivitetään ja tarkistetaan pystyrivi Column-luokan metodeilla
 - Mahdollinen virhe palautetaan Square-luokan oliolle, Puzzle-luokan oliolle ja lopulta käyttöliittymälle.
 - Käyttöliittymä piirtää uuden numeron grafiikan vihreänä, jos luku kelpaa ja punaisena, jos luku ei täytä vaaka- tai pystyrivin ehtoja.
+<img src="png/Kakuroplay.png" width="750">
