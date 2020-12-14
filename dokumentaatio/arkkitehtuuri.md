@@ -22,7 +22,8 @@ Sovelluksen logiikka on rakennettu ohjelmallisesti kakuro.logic -pakkauksen luok
 Sovelluksen looginen luokkarakenne on kuvatttu alla.  
 <img src="png/class.png" width="750">
 
-Sovelluksen loogisen rakenteen luiominen tapahtuu seuraavasti:
+
+Sovelluksen loogisen rakenteen luominen tapahtuu seuraavasti:
 
 <img src="png/Kakuroinit.png" width="750">
 
@@ -31,6 +32,7 @@ Sovelluksen loogisen rakenteen luiominen tapahtuu seuraavasti:
 -  Map-luokan tekstipohjaisen kartan perusteella luodaan Square-luokan oliot, jotka kuvaavat Kakuro-ristikon täytettäviä ruutuja.
 - Square-luokan oliot käydään läpi ja niiden perusteella luodaan Row-luokan oliot, jotka kuvaavat ristikon vaakarivejä.
 - Samalla lailla luodaan Column-luokan oliot, jotka kuvaavat pystyrivejä.
+
 
 Sovelluksen looginen toiminta pelin aikana tapahtuu seuraavasti:
 
