@@ -6,7 +6,7 @@ Sovellus on japanilainen Kakuro-numeroristikko.  Ruudukossa on tyhjiä ruutuja, 
 
 ## Käyttäjät
 
-Sovelluksella on alkuvaiheessa vain yksi käyttäjä eli pelaaja.  Myöhemmin voidaan lisätä admin-käyttäjä, joka voi tehdä esimerkiksi uusia ruudukoita.
+Sovelluksella on alkuvaiheessa vain yksi käyttäjä eli pelaaja.
 
 ## Käyttöliittymä
 

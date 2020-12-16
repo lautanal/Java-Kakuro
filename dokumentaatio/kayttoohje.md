@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa ohjelma [kakuro.jar](https://github.com/lautanal/ot-harjoitustyo/releases/tag/Viikko6) sekä puzzle-kansio, jossa on pelikentät.
+Lataa sovellus [release](https://github.com/lautanal/ot-harjoitustyo/releases/tag/Viikko6).  Pelaamiseen tarvitset jar-tiedoston sekä puzzle-kansio, jossa on pelikentät.
 
 ## Ohjelman käynnistäminen
 
