@@ -24,8 +24,6 @@ Sovelluksen järjestelmätestaus on suoritettu manuaalisesti pelaamalla kaikki r
 
 Sovellus on haettu ja sitä on testattu [käyttöohjeen](https://github.com/lautanal/ot-harjoitustyo//blob/master/dokumentaatio/kayttoohje.md) kuvaamalla tavalla sekä OSX- että Linux-ympäristössä.
 
-Sovellusta on testattu sekä tilanteissa, joissa käyttäjät ja työt tallettavat tiedostot ovat olleet olemassa ja joissa niitä ei ole ollut jolloin ohjelma on luonut ne itse.
-
 ### Toiminnallisuudet
 
 Kaikki [vaatimusmäärittelydokumentin](https://github.com/lautanal/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi.

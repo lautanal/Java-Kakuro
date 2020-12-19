@@ -22,6 +22,16 @@ Sovellus on japanilainen Kakuro-numeroristikko.  Ruudukossa on tyhjiä ruutuja, 
 
 ## Komentorivitoiminnot
 
+### Suoritettavan jarin generointi
+
+Komento
+
+```
+mvn package
+```
+
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _Kakuro-1.0-SNAPSHOT.jar_
+
 ### Testaus
 
 Testit suoritetaan komennolla
@@ -37,16 +47,6 @@ mvn test jacoco:report
 ```
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
-
-### Suoritettavan jarin generointi
-
-Komento
-
-```
-mvn package
-```
-
-generoi hakemistoon _target_ suoritettavan jar-tiedoston _Kakuro-1.0-SNAPSHOT.jar_
 
 ### JavaDoc
 
