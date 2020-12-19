@@ -23,7 +23,7 @@ public class Records {
                 if (parts[0].equals("TASO")) {
                     this.gameLevel = Integer.parseInt(parts[1]);
                     this.gamesCompleted = Integer.parseInt(parts[2]);
-                    this.gameLimit = this.gameLevel*10;
+                    this.gameLimit = this.gameLevel * 10;
                 } else if (parts[0].equals("PELI")) {
                     int gameNr = Integer.parseInt(parts[1]);
                     this.gameResults[gameNr] = Integer.parseInt(parts[2]);

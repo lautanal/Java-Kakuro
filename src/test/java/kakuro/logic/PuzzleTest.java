@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  *
  * @author lasselautanala
  */
-public class RowTest {
+public class PuzzleTest {
 
     Square sq1, sq2, sq3, sq4, sq5;
     Row r1, r2;
@@ -93,6 +93,20 @@ public class RowTest {
         sq3.setNumber(3);
         assertEquals(false, c1.checkSum());
         sq3.setNumber(6);
+        assertEquals(true, c1.checkSum());
+    }
+    
+    @Test
+    public void numeronNollaustarkistus() {
+        sq1.setNumber(8);
+        sq2.setNumber(7);
+        assertEquals(false, r1.checkSum());
+        sq2.setNumber(0);
+        assertEquals(true, r1.checkSum());
+        sq2.setNumber(9);
+        sq3.setNumber(3);
+        assertEquals(false, c1.checkSum());
+        sq3.setNumber(0);
         assertEquals(true, c1.checkSum());
     }
     
