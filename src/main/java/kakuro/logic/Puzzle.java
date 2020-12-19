@@ -141,7 +141,6 @@ public class Puzzle {
         return this.squares[i][j];
     }
     
-
     /**
     * Numeron laittaminen ruutuun
     *

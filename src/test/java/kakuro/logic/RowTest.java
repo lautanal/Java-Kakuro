@@ -26,16 +26,24 @@ public class RowTest {
         sq5 = new Square(7);
         r1 = new Row();
         r1.addSquare(sq1);
+        sq1.setRow(r1);
         r1.addSquare(sq2);
+        sq2.setRow(r1);
         c1 = new Column();
         c1.addSquare(sq1);
+        sq1.setColumn(c1);
         c1.addSquare(sq3);
+        sq3.setColumn(c1);
         c2 = new Column();
         c2.addSquare(sq2);
+        sq2.setColumn(c2);
         c2.addSquare(sq4);
+        sq4.setColumn(c2);
         r2 = new Row();
         r2.addSquare(sq3);
+        sq3.setRow(r2);
         r2.addSquare(sq5);
+        sq5.setRow(r2);
     }
 
     @Test
@@ -44,6 +52,7 @@ public class RowTest {
         assertTrue(sq2!=null);      
         assertTrue(sq3!=null);      
    }
+
     
     @Test
     public void ruudunOikeaTulos() {
@@ -75,7 +84,7 @@ public class RowTest {
     }
     
     @Test
-    public void rivinSummanTarkistus() {
+    public void rivinSarakkeenSummanTarkistus() {
         sq1.setNumber(8);
         sq2.setNumber(7);
         assertEquals(false, r1.checkSum());
@@ -85,6 +94,19 @@ public class RowTest {
         assertEquals(false, c1.checkSum());
         sq3.setNumber(6);
         assertEquals(true, c1.checkSum());
+    }
+    
+    @Test
+    public void samaNumeroTarkistus() {
+        sq1.setNumber(8);
+        sq2.setNumber(8);
+        assertEquals(false, r1.checkSame());
+        sq2.setNumber(9);
+        assertEquals(true, r1.checkSame());
+        sq3.setNumber(8);
+        assertEquals(false, c1.checkSame());
+        sq3.setNumber(6);
+        assertEquals(true, c1.checkSame());
     }
     
     
@@ -123,4 +145,5 @@ public class RowTest {
         assertEquals(0, pz1.setSquare(8,5,9));
         assertEquals(true, pz1.checkCompleted());
     }
+
 }

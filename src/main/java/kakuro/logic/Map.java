@@ -9,15 +9,15 @@ import java.util.Scanner;
     */
 public class Map {
 
-    private char[][] map;
+    private char[][] charMap;
     private int nRows;
     private int nCols;
 
     public Map(int mapNr) {
         String fname = "puzzle/puzzle" + mapNr + ".txt";
-        this.map = puzzleRead(fname, 10, 9);
-        this.nRows = this.map.length;
-        this.nCols = this.map[0].length;
+        this.charMap = puzzleRead(fname, 10, 9);
+        this.nRows = this.charMap.length;
+        this.nCols = this.charMap[0].length;
     }
 
     /**
@@ -41,7 +41,7 @@ public class Map {
     *
     */
     public char getChar(int i, int j) {
-        return this.map[i][j];
+        return this.charMap[i][j];
     }
 
     /**
@@ -49,7 +49,7 @@ public class Map {
     *
     */
     public void setChar(int i, int j, char c) {
-        this.map[i][j] = c;
+        this.charMap[i][j] = c;
     }
 
     /**

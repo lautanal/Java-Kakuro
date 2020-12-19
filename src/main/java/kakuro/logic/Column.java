@@ -43,8 +43,6 @@ public class Column {
     public void addSquare(Square square) {
         this.nSquares += 1;
         this.correctSum += square.getCorrect();
-//        squareList.add(square);
-//        square.setColumn(this);
     }
 
 

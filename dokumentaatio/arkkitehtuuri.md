@@ -7,7 +7,9 @@ Ohjelman koodin pakkausrakenne on seuraava:
 
 <img src="png/package.png" width="750">
 
-Pakkaus _kakuro.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän ja _kakuro.logic_ sovelluslogiikan.
+- Pakkaus _kakuro.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän.
+- Pakkaus  _kakuro.logic_ sisältää sovelluslogiikan.
+- Pakkaus _kakuro.records_ sisältää rutiinit, joilla tulokset talletetaan tiedostoon.
 
 ## Käyttöliittymä
 
@@ -17,10 +19,16 @@ Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta.  Se kutsu
 
 ## Sovelluslogiikka
 
+### Luokkarakenne
+
 Sovelluksen logiikka on rakennettu ohjelmallisesti kakuro.logic -pakkauksen luokissa _Puzzle_,  _Map_, _Square_, _Row_  ja  _Column_.
 
 Sovelluksen looginen luokkarakenne on kuvatttu alla.  
 <img src="png/class.png" width="750">
+
+### Päätoiminnallisuudet
+
+#### Peliruudukon luominen
 
 Sovelluksen loogisen rakenteen luominen tapahtuu seuraavasti:
 - Käyttöliittymä luo Puzzle-luokan olion, joka kuvaa Kakuro-ristikkoa.
@@ -30,7 +38,7 @@ Sovelluksen loogisen rakenteen luominen tapahtuu seuraavasti:
 - Samalla lailla luodaan Column-luokan oliot, jotka kuvaavat pystyrivejä.
 <img src="png/Kakuroinit.png" width="750">
 
-
+#### Sovelluslogiikka pelin kuluessa
 
 Sovelluksen logiikka pelin aikana toimii seuraavasti:
 - Käyttäjä valisee ruudun, johon seuraava numero asetetaan.

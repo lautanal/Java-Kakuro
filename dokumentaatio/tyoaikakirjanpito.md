@@ -15,4 +15,9 @@
 | 03.12. | 8    | Käyttöliittymän parantelua, dokumentaatiota
 | 07.12. | 7    | Käyttöliittymän muutoksia
 | 08.12. | 5    | Käyttöliittymän muutoksia, Row- ja Column -luokan muutoksia
-yht    | 59   | 
+| 13.12. | 4    | Dokumentointia
+| 16.12. | 4    | Ajanotto lisätty peliin
+| 17.12. | 4    | Tasot lisätty
+| 18.12. | 5    | Tulosten talletus tiedostoon
+| 19.12. | 5    | Pelin kenttien tekoa
+yht    | 86   | 

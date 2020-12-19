@@ -1,6 +1,6 @@
 # Testausdokumentti
 
-Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla sekä manuaalisesti tapahtunein järjestelmätason testein.
+Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla sekä manuaalisesti pelaamalla kaikki rudukot läpi.
 
 ## Yksikkö- ja integraatiotestaus
 
@@ -11,10 +11,6 @@ Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, eli pakkauksen [t
 Integraatiotestit käyttävät datan pysyväistallennukseen DAO-rajapintojen keskusmuistitoteutuksia [FakeTodoDao](https://github.com/mluukkai/OtmTodoApp/blob/master/src/test/java/todoapp/domain/FakeTodoDao.java) ja [FakeUserDao](https://github.com/mluukkai/OtmTodoApp/blob/master/src/test/java/todoapp/domain/FakeTodoDao.java)
 
 Sovelluslogiikkakerroksen luokille [User](https://github.com/mluukkai/OtmTodoApp/blob/master/src/main/java/todoapp/domain/User.java) ja [Todo](https://github.com/mluukkai/OtmTodoApp/blob/master/src/main/java/todoapp/domain/User.java) on tehty muutama yksikkötesti kattamaan tapaukset, joita integraatiotestit eivät kata (mm. olioiden _equals_-metodit).
-
-### DAO-luokat
-
-Molempien DAO-luokkien toiminnallisuus on testattu luomalla testeissä tilapäinen tiedosto hyödyntäen JUnitin [TemporaryFolder](https://junit.org/junit4/javadoc/4.12/org/junit/rules/TemporaryFolder.html)-ruleja.
 
 ### Testauskattavuus
 
@@ -36,9 +32,4 @@ Sovellusta on testattu sekä tilanteissa, joissa käyttäjät ja työt tallettav
 
 ### Toiminnallisuudet
 
-Kaikki [määrittelydokumentin](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/vaatimusmaarittely.md#perusversion-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.
-
-## Sovellukseen jääneet laatuongelmat
-
-Sovellus ei anna tällä hetkellä järkeviä virheilmoituksia, seuraavissa tilanteissa
-- konfiguraation määrittelemiin tiedostoihin ei ole luku/kirjoitusoikeuksia
+Kaikki [määrittelydokumentin](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/vaatimusmaarittely.md#perusversion-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi.
