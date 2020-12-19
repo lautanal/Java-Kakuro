@@ -20,4 +20,5 @@
 | 17.12. | 4    | Tasot lisätty
 | 18.12. | 5    | Tulosten talletus tiedostoon
 | 19.12. | 5    | Pelin kenttien tekoa
-yht    | 86   | 
+| 19.12. | 3    | Dokumentointia, testausta
+yht    | 89   | 

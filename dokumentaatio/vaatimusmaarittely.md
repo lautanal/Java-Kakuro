@@ -16,7 +16,7 @@ Käyttö on suoraviivaista.  Käyttäjä valitsee ruudun ja antaa haluamansa num
 
 Jos käyttäjän antama numero ei toteuta ruudun ehtoja, numero muuttuu punaiseksi.
 
-Kun ruudukko on täynnä, käyttäjä näkee kulutetun ajan ja saa onnittelut.  Parhaat tulokset talletetaan tiedostoon.
+Kun ruudukko on täynnä ja oikein ratkaistu, käyttäjä näkee ratkaisuun kulutetun ajan ja saa onnittelut.  Parhaat tulokset talletetaan tiedostoon.
 
 <img src="png/KakuroUi.png" width="750">
 

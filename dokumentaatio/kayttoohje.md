@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa sovellusen [release](https://github.com/lautanal/ot-harjoitustyo/releases/tag/loppupalautus).  Pelaamiseen tarvitset jar-tiedoston sekä puzzle-kansio, jossa on pelattavat ruudukot.
+Lataa sovelluksen [release](https://github.com/lautanal/ot-harjoitustyo/releases/tag/loppupalautus).  Pelaamiseen tarvitset jar-tiedoston sekä puzzle-kansio, jossa on pelattavat ruudukot.
 
 ## Ohjelman käynnistäminen
 
