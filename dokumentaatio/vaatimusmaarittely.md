@@ -1,44 +1,36 @@
-# Testausdokumentti
+# Vaatimusmäärittely
 
-Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla sekä manuaalisesti tapahtunein järjestelmätason testein.
+## Sovelluksen tarkoitus
 
-## Yksikkö- ja integraatiotestaus
+Sovellus on japanilainen Kakuro-numeroristikko.  Ruudukossa on tyhjiä ruutuja, joihin täytetään numeroita vaaka- ja pystysuoraan käyttäen numeroita 1-9, siten, että samalla vaaka- tai pystyrivillä ei ole kahta samaa numeroa.  Vaakarivin vasemmalla puolella ja pystyrivin yläpuolella on merkitty summa, joka rivin lukujen tulee toteuttaa.
 
-### sovelluslogiikka
+## Käyttäjät
 
-Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, eli pakkauksen [todoapp.domain](https://github.com/mluukkai/OtmTodoApp/tree/master/src/main/java/todoapp/domain) luokkia testaavat integraatiotestit [TodoServiceUserTest](https://github.com/mluukkai/OtmTodoApp/blob/master/src/test/java/todoapp/domain/TodoServiceUserTest.java) ja [TodoServiceTodoTest](https://github.com/mluukkai/OtmTodoApp/blob/master/src/test/java/todoapp/domain/TodoServiceUserTest.java) joiden määrittelevät testitapaukset simuloivat käyttöliittymän [TodoService](https://github.com/mluukkai/OtmTodoApp/blob/master/src/main/java/todoapp/domain/TodoService.java)-olin avulla suorittamia toiminnallisuuksia.
+Sovelluksella on alkuvaiheessa vain yksi käyttäjä eli pelaaja.
 
-Integraatiotestit käyttävät datan pysyväistallennukseen DAO-rajapintojen keskusmuistitoteutuksia [FakeTodoDao](https://github.com/mluukkai/OtmTodoApp/blob/master/src/test/java/todoapp/domain/FakeTodoDao.java) ja [FakeUserDao](https://github.com/mluukkai/OtmTodoApp/blob/master/src/test/java/todoapp/domain/FakeTodoDao.java)
+## Käyttöliittymä
 
-Sovelluslogiikkakerroksen luokille [User](https://github.com/mluukkai/OtmTodoApp/blob/master/src/main/java/todoapp/domain/User.java) ja [Todo](https://github.com/mluukkai/OtmTodoApp/blob/master/src/main/java/todoapp/domain/User.java) on tehty muutama yksikkötesti kattamaan tapaukset, joita integraatiotestit eivät kata (mm. olioiden _equals_-metodit).
+Sovellus koostuu yhdestä näkymästä eli pelilaudasta.
 
-### DAO-luokat
+Käyttö on suoraviivaista.  Käyttäjä valitsee ruudun ja antaa haluamansa numeron, joka ruutuun laitetaan. 
 
-Molempien DAO-luokkien toiminnallisuus on testattu luomalla testeissä tilapäinen tiedosto hyödyntäen JUnitin [TemporaryFolder](https://junit.org/junit4/javadoc/4.12/org/junit/rules/TemporaryFolder.html)-ruleja.
+Jos käyttäjän antama numero ei toteuta ruudun ehtoja, numero muuttuu punaiseksi.
 
-### Testauskattavuus
+Kun ruudukko on täynnä, käyttäjä näkee kulutetun ajan ja saa onnittelut.  Parhaat tulokset talletetaan tiedostoon.
 
-Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 94% ja haarautumakattavuus 96%
+<img src="png/KakuroUi.png" width="750">
 
-<img src="https://raw.githubusercontent.com/mluukkai/OtmTodoApp/master/dokumentaatio/kuvat/t-1.png" width="800">
+## Perusversion tarjoama toiminnallisuus
 
-Testaamatta jäivät tilanteet, joissa käyttäjät tai tehtävät tallettavia tiedostoja ei ole, tai niihin ei ole luku- ja kirjoitusoikeutta.
+Sovelluksessa on tällä hetkellä 30 pientä ruudukkoa, jotka on jaettu kolmelle eri vaikeustasolle.
 
-## Järjestelmätestaus
+Pelaaja aloittaa tasolta 1, jossa valittavana on kymmenen eri peliruudukkoa.  Kun pelaaja on ratkaissut oikein kaikki tason kymmenen ruudukkoa, pääsee hän seuraavalle tasolle.
 
-Sovelluksen järjestelmätestaus on suoritettu manuaalisesti.
+## Jatkokehitysideoita
 
-### Asennus ja konfigurointi
+Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla
 
-Sovellus on haettu ja sitä on testattu [käyttöohjeen](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/kayttoohje.md) kuvaamalla tavalla sekä OSX- että Linux-ympäristöön siten, että sovelluksen käynnistyshakemistossa on ollut käyttöohjeen kuvauksen mukainen _config.properties_-tiedosto.
-
-Sovellusta on testattu sekä tilanteissa, joissa käyttäjät ja työt tallettavat tiedostot ovat olleet olemassa ja joissa niitä ei ole ollut jolloin ohjelma on luonut ne itse.
-
-### Toiminnallisuudet
-
-Kaikki [määrittelydokumentin](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/vaatimusmaarittely.md#perusversion-tarjoama-toiminnallisuus) ja käyttöohjeen listaamat toiminnallisuudet on käyty läpi. Kaikkien toiminnallisuuksien yhteydessä on syötekentät yritetty täyttää myös virheellisillä arvoilla kuten tyhjillä.
-
-## Sovellukseen jääneet laatuongelmat
-
-Sovellus ei anna tällä hetkellä järkeviä virheilmoituksia, seuraavissa tilanteissa
-- konfiguraation määrittelemiin tiedostoihin ei ole luku/kirjoitusoikeuksia
+- Käyttäjien rekisteröinti
+- Suorituksen tulokset voidaan tallettaa käyttäjäkohtaisesti
+- Käyttäjä voi merkitä ruutuun muistiin mahdolliset numerovaihtoehdot
+- Kenttien automaattinen generointi
