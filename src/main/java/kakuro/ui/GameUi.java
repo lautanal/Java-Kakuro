@@ -156,6 +156,7 @@ public class GameUi {
         this.numberGrid.setVgap(5);
         this.numberGrid.setHgap(5);
         this.numberGrid.setPadding(new Insets(10, 10, 10, 10));
+        this.numberGrid.setStyle("-fx-background-color: lightgrey;");
         for (int x = 0; x < 10; x++) {
             this.numbers[x] = new Button(" ");
             this.numbers[x].setFont(Font.font("Helvetica", 25));
@@ -291,13 +292,14 @@ public class GameUi {
         this.kakuroGrid.setVgap(1);
         this.kakuroGrid.setHgap(1);
         this.kakuroGrid.setPadding(new Insets(10, 10, 10, 10));
-        this.kakuroGrid.setStyle("-fx-background-color: white;");
+        this.kakuroGrid.setStyle("-fx-background-color: lightgrey;");
         for (int y = 0; y < this.nRows; y++) {
             for (int x = 0; x < this.nCols; x++) {
                 if (this.puzzle.checkSquare(y, x)) {
                     this.buttons[y][x] = new Button("  ");
                     this.buttons[y][x].setFont(Font.font("Helvetica", 40));
                     this.buttons[y][x].setStyle("-fx-text-fill: green");
+//                    this.buttons[y][x].setStyle("-fx-background-color: #f8f8f8");
                     this.kakuroGrid.add(buttons[y][x], x, y);
                     int rx = x;
                     int ry = y;
@@ -446,7 +448,7 @@ public class GameUi {
 // Info text        
         this.infoText.setFont(Font.font("Helvetica", 30));
         this.infoText.setPadding(new Insets(10, 10, 10, 10));
-        this.infoGrid.add(infoText, 1, 1);
+        this.infoGrid.add(infoText, 1, 2);
         
     // Game level label
         this.levelLabel.setFont(Font.font("Helvetica", 30));
@@ -468,7 +470,7 @@ public class GameUi {
         this.hbox.getChildren().add(this.gameLabel);
         this.hbox.getChildren().add(this.recordLabel);
         this.hbox.getChildren().add(this.timerLabel);
-        this.infoGrid.add(this.hbox, 1, 2);
+        this.infoGrid.add(this.hbox, 1, 1);
     }
     
     /**

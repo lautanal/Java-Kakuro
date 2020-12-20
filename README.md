@@ -30,7 +30,7 @@ Komento
 mvn package
 ```
 
-generoi hakemistoon _target_ suoritettavan jar-tiedoston _Kakuro-1.0-SNAPSHOT.jar_
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _Kakuro-1.0-SNAPSHOT.jar_  .
 
 ### Testaus
 
@@ -46,7 +46,7 @@ Testikattavuusraportti luodaan komennolla
 mvn test jacoco:report
 ```
 
-Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_ .
 
 ### JavaDoc
 
@@ -56,7 +56,7 @@ JavaDoc generoidaan komennolla
 mvn javadoc:javadoc
 ```
 
-JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_ .
 
 ### Checkstyle
 
@@ -66,4 +66,4 @@ Tiedoston [checkstyle.xml](https://github.com/lautanal/ot-harjoitustyo/blob/mast
  mvn jxr:jxr checkstyle:checkstyle
 ```
 
-Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_ .
