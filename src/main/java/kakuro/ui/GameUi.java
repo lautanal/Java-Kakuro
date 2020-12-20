@@ -3,8 +3,6 @@ package kakuro.ui;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-//import javafx.event.EventHandler;
-// import javafx.event.EventType;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -137,7 +135,6 @@ public class GameUi {
         this.gameLayout.setTop(this.numberGrid);
         this.gameLayout.setCenter(this.kakuroGrid);
         this.gameLayout.setBottom(this.infoGrid);
-//        this.gameLayout.setBottom(this.scoreGrid);
 
     // Uusi scene        
         this.scene = new Scene(gameLayout);
@@ -299,7 +296,6 @@ public class GameUi {
                     this.buttons[y][x] = new Button("  ");
                     this.buttons[y][x].setFont(Font.font("Helvetica", 40));
                     this.buttons[y][x].setStyle("-fx-text-fill: green");
-//                    this.buttons[y][x].setStyle("-fx-background-color: #f8f8f8");
                     this.kakuroGrid.add(buttons[y][x], x, y);
                     int rx = x;
                     int ry = y;
