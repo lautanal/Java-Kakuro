@@ -1,11 +1,11 @@
 # Käyttöohje
 
-Lataa sovelluksen [release](https://github.com/lautanal/ot-harjoitustyo/releases/tag/loppupalautus).  Pelaamiseen tarvitset jar-tiedoston sekä puzzle-kansio, jossa on pelattavat ruudukot.
+Lataa sovelluksen [release](https://github.com/lautanal/ot-harjoitustyo/releases/tag/loppupalautus).  Pelaamiseen tarvitset jar-tiedoston sekä puzzle-kansion, jossa on pelattavat ruudukot.
 
 
 ## Ohjelman asentaminen
 
-Suorittava jar-tiedosto ja peliruudukot sisältävä puzzle-kansio kopioidaan yhteiseen kansioon.
+Suorittava jar-tiedosto ja peliruudukot sisältävä puzzle-kansio kopioidaan samaan kansioon.
 
 
 ## Ohjelman käynnistäminen
@@ -28,7 +28,7 @@ Kakuro-ruudukossa on tyhjiä ruutuja, jotka täytetään käyttäen numeroita 1-
 
 Sovellusikkunan keskellä on varsinainen Kakuro-ruudukko.   Kakuro-ruudukon yläpuolella on numeroiden valintarivi.
 
-Alhaalla on info-alue, jossa näkyvät ruudukon taso, numero, paras suoritus ja ratkaisuun kulunut aika.
+Alhaalla on info-alue, jossa näkyvät ruudukon taso, pelin numero, paras tulos ja ratkaisuun kulunut aika.
 
 
 ## Pelin kulku

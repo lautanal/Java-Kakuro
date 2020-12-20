@@ -21,4 +21,5 @@
 | 18.12. | 5    | Tulosten talletus tiedostoon
 | 19.12. | 5    | Pelin kenttien tekoa
 | 19.12. | 3    | Dokumentointia, testausta
+| 20.12. | 2    | Viimeiset viilaukset
 yht    | 89   | 
