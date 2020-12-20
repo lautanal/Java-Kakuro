@@ -6,7 +6,7 @@ Ohjelmaa on testattu automatisoiduin yksikkö- ja integraatiotestein JUnitilla j
 
 ### sovelluslogiikka
 
-Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, eli pakkauksen [kakuro.logic](https://github.com/lautanal/ot-harjoitustyo/tree/master/src/test/java/kakuro/logic) luokkia testaavat integraatiotestit 
+Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, eli pakkauksen [kakuro.logic](https://github.com/lautanal/ot-harjoitustyo/tree/master/src/main/java/kakuro/logic) luokkia testaavat integraatiotestit 
 
 ### Testauskattavuus
 
