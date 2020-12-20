@@ -1,12 +1,12 @@
 # Testausdokumentti
 
-Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla sekä manuaalisesti pelaamalla kaikki rudukot läpi.
+Ohjelmaa on testattu automatisoiduin yksikkö- ja integraatiotestein JUnitilla ja manuaalisesti pelaamalla kaikki rudukot läpi.
 
 ## Yksikkö- ja integraatiotestaus
 
 ### sovelluslogiikka
 
-Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, eli pakkauksen [kakuro.logic](https://github.com/ot-harjoitustyo/src/main/java/kakuro/logic) luokkia testaavat integraatiotestit 
+Automatisoitujen testien ytimen moudostavat sovelluslogiikkaa, eli pakkauksen [kakuro.logic](https://github.com/lautanal/ot-harjoitustyo/tree/master/src/test/java/kakuro/logic) luokkia testaavat integraatiotestit 
 
 ### Testauskattavuus
 
